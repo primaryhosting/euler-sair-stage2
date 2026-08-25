@@ -60,7 +60,7 @@ The invariant: **EULER never finalizes an answer that has not been verified.**
 Consequence: in Solo, the deterministic Lean judge is the final authority on
 every answer; in Marathon (no runtime judge), only the self-verifying tiers are
 allowed to write at all. There is no code path from "unverified guess" to
-"submitted answer."
+a "judge-accepted answer."
 
 ---
 

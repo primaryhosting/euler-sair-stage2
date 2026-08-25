@@ -78,15 +78,20 @@ it per answer.
 **Claim 3.3 (held-out generalization).** On 120 order-4 FALSE instances
 excluded from every released problem set, and on 100 instances whose
 hypothesis law appears in no released set, the bank-plus-search pipeline
-produced valid witnesses in 120/120 and 100/100 cases.
+produced valid witnesses in 120/120 and 100/100 cases. Reproducible: the
+seeded generator and immutable cohort manifests are in `HELD-OUT-COHORTS/`
+(`reproduce_heldout.py`, `RESULTS.md`); both cohorts are held out from every
+released set by construction.
 *Status:* computationally verified. This — not the released-set sweep,
 which the harvest targeted (§7) — is the generalization claim of record.
 
 ## 4. TRUE certificates and the soundness invariant
 
-**Theorem 4.1 (no unverified exit).** Every answer the solver submits has
-passed an independent validity check prior to submission, and is checked
-again by the judge.
+**Theorem 4.1 (no unverified accept).** No answer counts unless the
+deterministic Lean judge accepts it. Every deterministic-tier answer
+additionally passes an independent check before submission; the grind and LLM
+tiers pass no prior check and reach the judge as unverified guesses, gated
+solely by its acceptance.
 *Proof sketch (structural, by cases on emit paths).* (i) FALSE emissions:
 Claim 3.2's exhaustive evaluation. (ii) Certificate-table entries (26
 manual, 390 Aristotle-proved, 18 ATP/loop): literal Lean bodies,
@@ -210,8 +215,8 @@ For every reported figure, the pair (what was checked, trusted base):
 
 ## 8. Artifacts
 
-Solver: `2-SOLVER/solver.py`, 422,250 bytes, SHA-256
-`8ecb362d8aa470336b57e6784b91c4575d0cf971df6743f046da4b1e0edcd55f`.
+Solver: `2-SOLVER/solver.py`, 442,061 bytes, SHA-256
+`e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329`.
 Certificates and contemporaneous trace: `8-TRACE/`. Fidelity record:
 `4-STATEMENT-FIDELITY.md`. Provenance ledger and re-derivation recipe:
 `7-TRUST/`. External systems (dev-time only; every output independently

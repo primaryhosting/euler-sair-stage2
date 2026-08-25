@@ -56,14 +56,17 @@ models guesses direction correctly 69% of the time on hard instances. A
 model is a marvel; a table of settled mathematics is *settled mathematics*.
 The design principle: never ask a model for a fact a table already knows.
 
-**The refusal to trust its own cleverness.** Every answer EULER produces
-passes an independent check before it is submitted — a counterexample table
-is exhaustively re-tested against both laws; a proof chain is re-walked
-step by step — and then the judge checks it *again*. There is no code path
-from "EULER believes this" to "EULER submits this." Belief is not a
-category the system has. This sounds like paranoia and is actually the
-whole epistemology: in a world of cheap derivations, the discipline of
-*showing* work is worth more than the work.
+**The refusal to trust its own cleverness.** No answer counts unless the
+judge accepts it. The deterministic answers earn more than that: a
+counterexample table is exhaustively re-tested against both laws, and a
+proof chain is re-walked step by step, before either is ever submitted — and
+then the judge checks it *again*. The grind and model tiers are the
+exception, and an honest one: they are unchecked guesses that the judge
+alone can accept or reject. There is no code path from "EULER believes this"
+to "EULER's answer counts." Belief is not a category the system has. This
+sounds like paranoia and is actually the whole epistemology: in a world of
+cheap derivations, the discipline of *showing* work is worth more than the
+work.
 
 **The refusal to stop at one method.** NO-answers come from a library of
 small worlds — a few hundred finite operation tables, each of which happens

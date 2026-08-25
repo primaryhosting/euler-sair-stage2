@@ -99,7 +99,7 @@ Tier 4  LLM with accumulated near-miss context                  (remaining)
 Tier 5  Opposite-direction fallback
 ```
 
-On the scored order-4 distribution, Tier 1 alone resolves essentially every
+For inputs whose IDs correspond to the ETP order-4 catalog (1–4694), Tier 1 alone resolves essentially every
 problem; Tiers 2–5 are safety nets for out-of-distribution / unknown-band inputs.
 
 ---

@@ -19,9 +19,9 @@ whether every magma satisfying `E1` satisfies `E2`, and emits a
 machine-checkable certificate — a finite countermodel for FALSE, a Lean 4 proof
 for TRUE — re-verified by the competition's open, deterministic judge. The
 solver is organized as a *refusal stack*: direction is read from a precomputed
-public implication closure rather than guessed; every candidate answer passes
-an independent check before submission; and no single proof method is trusted
-to cover the space. We report, with explicit verification badges, an exact
+public implication closure rather than guessed; no answer counts unless the
+judge accepts it, and the deterministic tiers additionally self-check before
+emitting; and no single proof method is trusted to cover the space. We report, with explicit verification badges, an exact
 direction agreement of 600/600 against the organizers' published answers, a
 held-out FALSE generalization of 120/120 (and 100/100 on novel hypotheses), and
 a released-set solve ceiling of 800/800 which we mark as a *ceiling* because it
@@ -87,13 +87,14 @@ conclusion is not an argument against models; it is arithmetic. The embedded
 matrix only *selects a branch* — no submitted answer depends on it for validity,
 because every answer carries its own independently-checked certificate.
 
-**Refusal II — do not trust cleverness.** Every candidate answer passes an
-independent check before submission, and the judge checks it again. FALSE tables
-are exhaustively evaluated against both laws (no sampling) in `decideFin!`
-semantics; TRUE chains are re-walked step by step; completion proofs are emitted
-by a *total* emitter (§3.2); the LLM tier exists only behind the judge gate. The
-central structural claim (Theorem 4.1) is that there is no code path from
-heuristic confidence to a submitted answer.
+**Refusal II — do not trust cleverness.** No answer counts unless the judge
+accepts it; the deterministic tiers additionally pass an independent check before
+emitting. FALSE tables are exhaustively evaluated against both laws (no sampling)
+in `decideFin!` semantics; TRUE chains are re-walked step by step; completion
+proofs are emitted by a *total* emitter (§3.2). The grind and LLM tiers pass no
+prior check and reach the judge as unverified guesses — gated solely by its
+acceptance. The central structural claim (Theorem 4.1) is that there is no code
+path from heuristic confidence to a *judge-accepted* answer.
 
 **Refusal III — do not stop at one method.** The FALSE and TRUE sides are each a
 cheapest-first cascade of independent techniques, detailed next.
@@ -276,6 +277,8 @@ badge.*
 |---|---|---|
 | Direction vs official answers, order-4 evaluation sets | **600 / 600** | Computationally verified |
 | Held-out FALSE — pairs absent from every released set | **120 / 120** | Computationally verified |
+
+The held-out cohorts are reproducible: `HELD-OUT-COHORTS/reproduce_heldout.py` regenerates both (seeded, held out from every released set by construction) with an immutable result log; 0 invalid witnesses.
 | Held-out FALSE — novel hypotheses (never in any released set) | **100 / 100** | Computationally verified |
 | Released evaluation sets (4 × 200) | **800 / 800** | Ceiling |
 | Order-5 evaluation set (fully outside the oracle) | **190 / 200** organic | Computationally verified |
@@ -432,8 +435,8 @@ solver to answer the questions. We packaged it to answer the harder one.
 
 ## Artifacts
 
-Solver of record: `solver.py`, 422,250 bytes, SHA-256
-`8ecb362d8aa470336b57e6784b91c4575d0cf971df6743f046da4b1e0edcd55f`, one file,
+Solver of record: `solver.py`, 442,061 bytes, SHA-256
+`e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329`, one file,
 both tracks. Contribution pack (this document's parent): embedded-data
 disclosure, reactivation packet, statement-fidelity record, epistemic-badge
 table, workflow diagrams, four graded expositions, and the contemporaneous
