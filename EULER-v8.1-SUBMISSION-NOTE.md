@@ -2,8 +2,8 @@
 
 Per the Stage-2 rule that solvers embedding compressed data / literal tables
 disclose them, EULER's `solver.py` (candidate `EULER-SUBMISSION-2026-08-25.py`,
-**440,436 bytes**, SHA-256
-`a9675ffba96cd4b5954374d4734582c6b9c6f2592751a8b47a160a04e6514efd`,
+**442,061 bytes**, SHA-256
+`e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329`,
 under the 500 KB limit; includes the v8.2 12 s UNKNOWN-direction CE probe,
 was 2 s) and the proof-supported infinite-model FALSE tier described below.
 It contains the payloads below. All are

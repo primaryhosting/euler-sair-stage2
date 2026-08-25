@@ -14,7 +14,7 @@ that the SAIR judge accepts.
 | | |
 |---|---|
 | **Frozen final pre-submit candidate** | `EULER-SUBMISSION-2026-08-25.py` — **not promoted without a fresh official judge run** |
-| **Candidate size / SHA-256** | 440,436 bytes · `a9675ffba96cd4b5954374d4734582c6b9c6f2592751a8b47a160a04e6514efd` |
+| **Candidate size / SHA-256** | 442,061 bytes · `e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329` |
 | **Promoted live mirror** | `EQT02-S00021-infra-failfast.py` — prior v8.1 baseline, intentionally unchanged |
 | **Live size / SHA-256** | 402,238 bytes · `33456faa124da32a72019ef045bbfd347a943686b84d833fc0e1d30bf6d81178` |
 | **Compiles** | `python3 -m py_compile` — clean |
@@ -73,7 +73,7 @@ is no separate `submit` message in Solo mode).
 
 Direction (TRUE vs FALSE) is read from an **embedded 4694×4694 order-4
 implication bitmatrix** that is byte-identical to the public Equational Theories
-Project closure — so on the scored (order-4) distribution, direction is exact
+Project closure — so for inputs whose IDs correspond to the ETP order-4 catalog (1–4694), direction is exact
 with zero search. Given the direction, **FALSE** problems first get a
 finite-magma counterexample (table bank → exhaustive →
 structured/affine/bilinear/CSP) emitted as `finOpTable` + `decideFin!`; after a

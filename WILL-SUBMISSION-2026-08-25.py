@@ -13,9 +13,9 @@
 # No oracle: no implication matrix, no direction lookup, no answer banks.
 # No banks: no table banks, no lookup blobs, no pair-keyed certificates.
 # No borrowed proofs: every Lean body is constructed here, at runtime.
-# The one embedded payload is the PROMPT constant, which carries three worked
-# teaching examples of the moves — concrete (H, Goal, verdict) triples, but
-# re-derived by technique, not retrieved from a table. Disclosed, not hidden.
+# No worked answers: the PROMPT teaches the three moves as SCHEMAS (the shape of
+# each technique), with no verdict or proof for any specific (H, Goal) pair.
+# The one embedded payload is that prompt. Disclosed, not hidden.
 # Technique only: chain rewriting, bounded Knuth-Bendix completion, ALLEQ
 # collapse construction, and counterexample search whose structured
 # generators are computed from the formulas in hand — never stored.
@@ -42,7 +42,7 @@ from itertools import product as iproduct
 # interpolation slots. Models: openai/gpt-oss-120b, google/gemma-4-31b-it.
 # ============================================================================
 
-PROMPT = r"""You are WILL, a proof strategist for magma equational logic. You carry no lookup tables and no answer banks — only technique, and the three worked examples below, which are illustrations of the moves you re-derive, not answers to retrieve. Walk in without it. Be elegance in action.
+PROMPT = r"""You are WILL, a proof strategist for magma equational logic. You carry no lookup tables, no answer banks, and no worked answers — only technique. Walk in without it. Be elegance in action.
 
 A magma is a set G with one binary operation ◇ (problems may print it as *; treat * and ◇ as the same symbol, and always write ◇ in your output). Decide whether every magma satisfying H also satisfies the Goal.
 
@@ -63,24 +63,30 @@ Reply with EXACTLY one JSON object. No prose, no markdown, no reasoning text bef
 
 Rules for "proof": it is inserted after `intro G _ h`, where `h : H`. Begin with `intro x y z ...` — one variable per Goal variable, in order. Use only: intro, have, calc, rw, exact, .trans, .symm, congrArg. Never sorry, never #eval, no imports, no `def`. Escape newlines as \n inside the JSON string. Rules for "table": table[i][j] = i ◇ j, entries in 0..n-1, n ≤ 4. It must satisfy H at EVERY assignment and break the Goal at SOME assignment — check every cell before you answer. Rules for "check" (mandatory): for "false", name the breaking assignment with both sides computed (e.g. "x=0,y=1: LHS=0, RHS=1"); for "true", name the instantiations of h your proof stands on. Compute it against THIS problem's H — if you cannot fill it honestly, your answer is wrong. Rules for "lemma": one equation over x y z and ◇; the solver will itself try to prove H ⇒ lemma and H + lemma ⇒ Goal. Offer it only when you cannot finish directly.
 
-Three demonstrations of the moves. These are illustrations of technique, not
-answers to look up — each is re-derived from the method in front of you, and you
-must do the same for the real problem, which will differ. Learn the MOVE, not the pair.
+Three moves. These are schemas — the SHAPE of each technique, with no worked
+answer to any specific problem. You construct the concrete proof or table for the
+H and Goal in front of you.
 
-1. Collapse — the crown move. Illustrated on H: x = y ◇ y, Goal: x = (y ◇ x) ◇ z.
-   See it: h a a : a = a ◇ a and h b a : b = a ◇ a, so a = b — the magma has one element, and ANY goal is an instance.
-   {"verdict":"true","proof":"intro x y z\nhave ALLEQ : ∀ a b : G, a = b := fun a b => (h a a).trans (h b a).symm\nexact ALLEQ x ((y ◇ x) ◇ z)","check":"h a a : a = a ◇ a; h b a : b = a ◇ a; chained give a = b"}
-   Whenever H forces all elements equal (projection laws like a = a ◇ b, constant laws, squashing laws), prove ALLEQ first; the goal then falls to one `exact ALLEQ _ _`. Never try to rewrite your way to a collapse goal — rewriting proves reachability; collapse must be constructed from instantiations of h chained with .trans and .symm.
+1. Collapse — the crown move. Some H forces every element equal — a projection
+   law (a = a ◇ b, or a ◇ b = a), a constant law, or a squashing law. Recognize
+   it: instantiate h at repeated arguments and look for the shape a = a ◇ _ or
+   _ ◇ _ = a. When H collapses the magma to one element, prove
+   `ALLEQ : ∀ a b : G, a = b` by chaining two instantiations of h with .trans and
+   .symm, then close ANY goal with `exact ALLEQ <goal-lhs> <goal-rhs>`. Never
+   rewrite toward a collapse goal — rewriting proves reachability; collapse must
+   be constructed from instantiations of h.
 
-2. Chain. Illustrated on H: x ◇ y = y, Goal: (x ◇ y) ◇ z = z.
-   See it: rewrite with h twice, walking the left side down to the right.
-   {"verdict":"true","proof":"intro x y z\ncalc (x ◇ y) ◇ z = y ◇ z := by rw [h x y]\n  _ = z := h y z","check":"h x y : x ◇ y = y; h y z : y ◇ z = z"}
-   Most true implications are short chains: instantiate h at chosen arguments and walk one side of the Goal to the other in a calc. Choose instantiations by matching subterms of the Goal against one side of H.
+2. Chain. Most true implications are short rewrite chains. Treat h as a rewrite
+   rule; instantiate it at arguments that match subterms of the Goal; walk one
+   side of the Goal to the other in a `calc`, each step justified `:= h <args>` or
+   `:= by rw [h <args>]`. Choose instantiations by matching subterms of the Goal
+   against one side of H.
 
-3. Countermodel. Illustrated on H: x ◇ y = y ◇ x, Goal: x ◇ x = x.
-   See it: any symmetric table is commutative; make one diagonal cell disobey idempotence.
-   {"verdict":"false","table":[[1,0],[0,0]],"check":"x=0: LHS=0◇0=1, RHS=0 — Goal breaks; table symmetric so H holds at all 4 assignments"}
-   Check: the table is symmetric, so H holds at all 4 assignments; 0 ◇ 0 = 1 ≠ 0 breaks the Goal. Prefer n = 2 or 3. Try constant tables, projections (table[i][j] = i or j), cyclic tables ((i + j) mod n), then perturb one cell and re-check H everywhere.
+3. Countermodel. For FALSE, build the smallest magma that satisfies H and breaks
+   the Goal. Start from structured families — constant (all one value),
+   projection (table[i][j] = i, or = j), cyclic ((i + j) mod n) — check H at all
+   n² assignments, then perturb one cell and re-check H everywhere until the Goal
+   breaks at some assignment. Prefer n = 2 or 3.
 
 Method, in that order: (1) if a tiny table satisfies H and breaks the Goal, answer false with it; (2) ask whether H forces ALLEQ — if yes, construct it and finish in one exact; (3) hunt a calc chain; (4) if you see a plausible stepping stone but cannot finish, send your best direct attempt plus the stepping stone in "lemma".
 
@@ -2313,8 +2319,8 @@ def _selftest_will():
                  "{problem.equation1}", "{problem.equation2}",
                  "{solver.analysis}", "{solver.feedback}"):
         rep("prompt fragment: " + frag[:36], frag in PROMPT)
-    rep("prompt: check field in both shapes and all three miniatures",
-        PROMPT.count('"check":"') == 5)
+    rep("prompt: check field in both reply shapes, and NO worked-answer triples",
+        PROMPT.count('"check":"') == 2 and '"verdict":"true","proof":"intro' not in PROMPT)
 
     # Hooks registered.
     rep("hooks registered",

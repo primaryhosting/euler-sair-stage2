@@ -5,9 +5,9 @@ Status: **frozen final pre-submit candidate**.
 The file to upload, renamed byte-for-byte to `solver.py`, is:
 
 - `EULER-SUBMISSION-2026-08-25.py`
-- 440,436 bytes
+- 442,061 bytes
 - SHA-256
-  `a9675ffba96cd4b5954374d4734582c6b9c6f2592751a8b47a160a04e6514efd`
+  `e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329`
 - 62,598 bytes below the 500,000-byte submission limit
 
 Do not upload `EQT02-S00021-infra-failfast.py`; that is the intentionally

@@ -20,17 +20,21 @@ Two entries, each a single `solver.py`, each valid for **Solo and Marathon**
 | Field | Value |
 |-------|-------|
 | **File to upload** | `EULER-SUBMISSION-2026-08-25.py` |
-| **Size** | 440,436 bytes (limit 500,000) |
-| **SHA-256** | `a9675ffba96cd4b5954374d4734582c6b9c6f2592751a8b47a160a04e6514efd` |
+| **Size** | 442,061 bytes (limit 500,000) |
+| **SHA-256** | `e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329` |
 | **Tracks** | Solo + Marathon (same file) |
 | **Title** | EULER — a certificate-emitting solver for equational implication |
 
 ### Description (paste)
 
 EULER decides `E1 ⇒ E2` over magmas and emits a machine-checkable certificate —
-a finite countermodel for FALSE, a Lean 4 proof for TRUE — behind a strict
-invariant: every emitted answer passes an independent check before submission,
-and no code path leads from a heuristic guess to a finalized answer. Direction
+a finite countermodel for FALSE, a Lean 4 proof for TRUE — behind a strict rule:
+**no answer counts unless the competition judge accepts it.** The deterministic
+tiers (bank/CSP, chain, completion, transitivity) self-recheck before emitting;
+the grind and LLM tiers are unchecked guesses whose only gate is the judge. In
+Solo every candidate is judge-compiled; in Marathon only locally-rechecked
+deterministic and pre-verified certificates are written, with exact Lean
+validation at scoring. Direction
 is read from the public Equational Theories Project implication closure (exact on
 the order-4 core, validated 600/600 against the released evaluation answers);
 FALSE is a hypothesis-keyed finite-model bank plus a stdlib model finder and an
@@ -53,7 +57,7 @@ and disclosed in full below.
   (Knuth–Bendix) prover, zlib+base64; a runtime algorithm, not data.
 - **305 finite-magma tables** (orders 2–9) — counterexample witnesses; Mace4
   (McCune) dev-time harvest, each re-checked by our own finite evaluator.
-- **390 Aristotle proofs + 18 pair-keyed loop certificates** (10 order-5, 8
+- **26 hand-derived + 390 Aristotle proofs + 18 pair-keyed loop certificates** (10 order-5, 8
   order-4) — **complete Lean proofs for specific released `(eq1_id, eq2_id)`
   pairs, not direction bits.** Aristotle (Harmonic); Vampire (Kovács & Voronkov)
   / E (Schulz) reconstruction; compile-checked at creation on the judge
@@ -72,8 +76,9 @@ E, Aristotle, and Axle are dev-time contributors only — none runs at runtime.
 
 The 800/800 released-set solve figure is a *ceiling* built partly from the
 exact-row certificates above — it is **not** a private-set claim and **not** an
-official-judge result. The figure that generalizes is held-out: FALSE 120/120 on
-pairs and 100/100 on hypotheses absent from every released set. No result carries
+official-judge result. The figure that generalizes is held-out and reproducible (`HELD-OUT-COHORTS/`,
+seeded cohorts held out from every released set by construction): FALSE 120/120
+on pairs, 100/100 on hypotheses absent from every released set. No result carries
 an official-judge badge until this run returns.
 
 ---
@@ -83,8 +88,8 @@ an official-judge badge until this run returns.
 | Field | Value |
 |-------|-------|
 | **File to upload** | `WILL-SUBMISSION-2026-08-25.py` |
-| **Size** | 91,762 bytes (limit 500,000) |
-| **SHA-256** | `fe70c44101613dca8a322fec88a5c62d511131e10b0f8ae55b52a0c4d4eecb9b` |
+| **Size** | 91,125 bytes (limit 500,000) |
+| **SHA-256** | `5f1a174f72eccb9c72fad16aca49ade7de3a803e239c28e73463f360be5bc66a` |
 | **Tracks** | Solo + Marathon (same file) |
 | **Title** | WILL — technique without the table |
 
@@ -130,7 +135,7 @@ not private. No official-judge badge until this run returns.
 ## Pre-upload checklist
 
 - [ ] `python3 -m py_compile solver.py` clean (both files: verified 2026-08-25)
-- [ ] size < 500,000 bytes (EULER 440,436 · WILL 91,762 — both OK)
+- [ ] size < 500,000 bytes (EULER 442,061 · WILL 91,125 — both OK)
 - [ ] SHA matches this cover (recompute `shasum -a 256` before upload)
 - [ ] disclosure placed — in the form's notes field, or prepended as a comment
 - [ ] upload each file for **both** Solo and Marathon

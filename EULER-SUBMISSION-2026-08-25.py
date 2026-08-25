@@ -12,13 +12,14 @@
 #     prover, zlib+base64. A runtime algorithm, not data.
 #   • 305 finite-magma tables (orders 2-9) — counterexample witnesses; Mace4
 #     (McCune) dev-time harvest, each re-checked by our own finite evaluator.
-#   • 390 Aristotle proofs + 18 pair-keyed loop certificates (10 order-5, 8
-#     order-4) — COMPLETE Lean proofs for specific released (eq1_id, eq2_id)
-#     pairs, not direction bits. Aristotle (Harmonic); Vampire (Kovacs &
-#     Voronkov) / E (Schulz) reconstruction; compile-checked at creation on the
-#     judge toolchain by Axle (Axiom, Carina Hong's team). These are exact-row
-#     REGRESSION certificates for released public rows only; the Stage-2 spec
-#     states released rows will not recur in the private evaluation.
+#   • 26 hand-derived proofs + 390 Aristotle proofs + 18 pair-keyed loop
+#     certificates (10 order-5, 8 order-4) — COMPLETE Lean proofs for specific
+#     released (eq1_id, eq2_id) pairs, not direction bits. The 26 are manual
+#     (`_PROOFS`); the 390 by Aristotle (Harmonic); the 18 by Vampire (Kovacs &
+#     Voronkov) / E (Schulz) reconstruction; all compile-checked at creation on
+#     the judge toolchain by Axle (Axiom, Carina Hong's team). These are
+#     exact-row REGRESSION certificates for released public rows only; the
+#     Stage-2 spec states released rows will not recur in the private evaluation.
 # Verification: in Solo every emitted cert is re-compiled by the judge
 # (call_judge) before it counts. Marathon has no runtime judge — finite FALSE
 # tables are Python-rechecked before writing; the pre-verified Lean bodies
@@ -528,6 +529,27 @@ def norm_id(raw) -> int:
         return int(str(raw).strip())
     except (ValueError, TypeError):
         return -1
+
+def bind_ids_to_text(eq1_id, eq2_id, eq1, eq2):
+    """Statement-fidelity guard: the judge builds the theorem from the equation
+    TEXT, but our oracle and certificate stores are keyed on eq1_id/eq2_id.
+    Nothing in the protocol guarantees an ID names the supplied text, and a
+    mismatch would let an ID-keyed answer be emitted for a different problem —
+    the same unguarded representation drift that caused the earlier `*`/`◇`
+    failure. So we verify each ID against the embedded ETP catalog (normalised),
+    and if either does not match, we invalidate BOTH ids (return -1, -1) so every
+    ID-keyed path (oracle, hardcoded, transitivity) is disabled and the solver
+    falls through to text-driven proving/search. On a consistent manifest this is
+    a no-op (measured 40/40 exact on the released sets)."""
+    try:
+        eqs = _eq_list()
+        def ok(i, t):
+            return 0 < int(i) <= len(eqs) and normalise(eqs[int(i) - 1]) == normalise(t)
+        if ok(eq1_id, eq1) and ok(eq2_id, eq2):
+            return eq1_id, eq2_id
+    except Exception:
+        pass
+    return -1, -1
 
 def analyse(equation: str) -> dict:
     """
@@ -4340,6 +4362,8 @@ def solve(problem: dict, budget_seconds: float = 3600.0) -> str:
     eq2 = normalise(problem["equation2"])
     eq1_id = norm_id(problem.get("eq1_id") or problem.get("equation1_id", ""))
     eq2_id = norm_id(problem.get("eq2_id") or problem.get("equation2_id", ""))
+    # Statement-fidelity: only trust the IDs if they name the supplied text.
+    eq1_id, eq2_id = bind_ids_to_text(eq1_id, eq2_id, eq1, eq2)
     info1 = analyse(eq1)
     t0 = time.time()
 
@@ -4718,6 +4742,10 @@ def marathon():
             eq2 = normalise(p["equation2"])
             eq1_id = norm_id(p.get("eq1_id") or p.get("equation1_id", ""))
             eq2_id = norm_id(p.get("eq2_id") or p.get("equation2_id", ""))
+            # Statement-fidelity: only trust the IDs if they name the supplied
+            # text. Critical in Marathon, where an ID-keyed cert is written with
+            # no runtime judge to catch an ID/text mismatch.
+            eq1_id, eq2_id = bind_ids_to_text(eq1_id, eq2_id, eq1, eq2)
             known = oracle(eq1_id, eq2_id)
 
             if known != "true":
