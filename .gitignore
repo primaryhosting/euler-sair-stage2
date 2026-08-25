@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.pre-loop25-bak

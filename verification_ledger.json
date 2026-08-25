@@ -1,0 +1,1813 @@
+{
+  "summary": {
+    "classification_correct": 200,
+    "local_judge_verified": 156,
+    "axle_verified": 59,
+    "overlap_both": 56,
+    "unique_verified": 159,
+    "eprover_confirmed_true": 100,
+    "pending_true_certs": 41
+  },
+  "ledger": [
+    {
+      "eq_pair": "2739_2736",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3268_3253",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1876_1895",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4084_3555",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2699_3474",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "430_2263",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2327_4629",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3068_4074",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3917_4118",
+      "classification": "false",
+      "strategy": "exhaustive_fin2",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2917_28",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2942_5",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3108_4642",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "193_191",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4238_4230",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1865_1454",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "203_2673",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1167_2000",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "619_1322",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "825_167",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1922_125",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4157_39",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3291_3304",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1698_555",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "731_2663",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1232_73",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1045_910",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1617_1615",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1604_1822",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4608_3050",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1202_1055",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2111_1755",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "825_2663",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "282_2133",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3749_4320",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1120_714",
+      "classification": "true",
+      "strategy": "hardcoded_eprover",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4458_3867",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3568_3565",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4150_4134",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4364_3474",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2497_2441",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "143_1425",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4520_4476",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3665_640",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "305_295",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1202_2541",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "28_4081",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1595_1593",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3083_3094",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "833_3546",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "452_255",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2230_2205",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "919_872",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4616_4623",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1491_2866",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "376_4635",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "437_3722",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4530_4576",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1673_1731",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3758_1861",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "504_670",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4098_4090",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2599_2594",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1022_99",
+      "classification": "true",
+      "strategy": "hardcoded_eprover",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "425_1630",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4072_1120",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "608_593",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2930_2914",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "5_2866",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "413_642",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3541_3537",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1721_2291",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2430_2318",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1983_1021",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3533_3871",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2860_3458",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2098_221",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2459_3521",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3829_41",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4271_4165",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "130_1759",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4466_4458",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2061_307",
+      "classification": "true",
+      "strategy": "hardcoded_eprover",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1738_1258",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "643_614",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1671_1649",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3875_3865",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2260_2254",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4318_4314",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3315_2247",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2425_2351",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1751_1739",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2139_2138",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2659_3272",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2654_2864",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2814_2813",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "872_2444",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3684_1834",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "359_4065",
+      "classification": "true",
+      "strategy": "hardcoded_eprover",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2789_898",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1228_1887",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2935_3138",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1000_894",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "640_3150",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "13_4167",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2135_2128",
+      "classification": "true",
+      "strategy": "hardcoded_eprover",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "428_3725",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2709_4291",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4688_4686",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2623_2517",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2243_3660",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "280_833",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1874_1871",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "561_559",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "108_3862",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2079_24",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3286_3278",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3504_3496",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4480_3684",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1500_498",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2925_3674",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4290_3461",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "395_3271",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2137_1325",
+      "classification": "true",
+      "strategy": "hardcoded_eprover",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1788_1700",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1253_1251",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "691_1976",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4151_4149",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2074_2082",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1117_4658",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1664_1644",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1457_1454",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4082_4109",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3068_503",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2771_2775",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1764_616",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "907_2534",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4561_4566",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3529_427",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1197_1129",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2040_2035",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "773_768",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3539_3536",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2584_3078",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1507_1526",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4507_2507",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4325_1249",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4640_1692",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1861_1479",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1682_411",
+      "classification": "false",
+      "strategy": "mace4",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2034_2032",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "498_488",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1676_1672",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1874_4357",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "450_2087",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "172_169",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2474_3951",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2370_1248",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "819_212",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4266_4223",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4428_3343",
+      "classification": "false",
+      "strategy": "mace4",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3145_3481",
+      "classification": "false",
+      "strategy": "mace4",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2055_2656",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "863_862",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1925_1435",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "689_1350",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "1117_4688",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1322_2469",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1790_1722",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4199_4157",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2944_2850",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "25_23",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "195_1948",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "2070_2699",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1785_1783",
+      "classification": "true",
+      "strategy": "singleton_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4461_4433",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3943_503",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1243_3481",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4508_910",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "616_614",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3120_4406",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3316_1242",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1039_4291",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "404_4236",
+      "classification": "true",
+      "strategy": "constant_magma",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4120_2504",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "2088_1833",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4658_2240",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "3481_3456",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "489_417",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "3556_1454",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "378_1275",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "674_668",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4436_2100",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4443_2737",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4508_1657",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "117_1895",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1636_1839",
+      "classification": "true",
+      "strategy": "quasi_constant",
+      "classification_correct": true,
+      "local_judge": "pending",
+      "axle": "pending",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "4271_4598",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "4391_4382",
+      "classification": "true",
+      "strategy": "constancy_collapse",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "accepted",
+      "eprover": "proved"
+    },
+    {
+      "eq_pair": "58_1860",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    },
+    {
+      "eq_pair": "1634_3867",
+      "classification": "false",
+      "strategy": "structured_search",
+      "classification_correct": true,
+      "local_judge": "accepted",
+      "axle": "not_tested",
+      "eprover": "n/a"
+    }
+  ]
+}

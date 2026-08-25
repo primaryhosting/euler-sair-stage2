@@ -1,0 +1,12 @@
+[
+ {
+  "id": "evaluation_extra_hard_0034",
+  "eq1_id": 387,
+  "eq2_id": 4544,
+  "via": [
+   3758,
+   43
+  ],
+  "body": "have h1 : \u2200 (x : G) (y : G), (x \u25c7 y) = ((y \u25c7 y) \u25c7 (x \u25c7 x)) := by\n  intro x y\n  calc (x \u25c7 y)\n    _ = ((y \u25c7 y) \u25c7 x) := h x y\n    _ = ((x \u25c7 x) \u25c7 (y \u25c7 y)) := h (y \u25c7 y) x\n    _ = (((y \u25c7 y) \u25c7 (y \u25c7 y)) \u25c7 (x \u25c7 x)) := h (x \u25c7 x) (y \u25c7 y)\n    _ = (((y \u25c7 y) \u25c7 y) \u25c7 (x \u25c7 x)) := congrArg (fun t => (t \u25c7 (x \u25c7 x))) (h (y \u25c7 y) y).symm\n    _ = ((y \u25c7 y) \u25c7 (x \u25c7 x)) := congrArg (fun t => (t \u25c7 (x \u25c7 x))) (h y y).symm\nhave h2 : \u2200 (x : G) (y : G), (x \u25c7 y) = (y \u25c7 x) := by\n  intro x y\n  calc (x \u25c7 y)\n    _ = ((y \u25c7 y) \u25c7 (x \u25c7 x)) := h1 x y\n    _ = (((x \u25c7 x) \u25c7 (x \u25c7 x)) \u25c7 ((y \u25c7 y) \u25c7 (y \u25c7 y))) := h1 (y \u25c7 y) (x \u25c7 x)\n    _ = ((x \u25c7 x) \u25c7 ((y \u25c7 y) \u25c7 (y \u25c7 y))) := congrArg (fun t => (t \u25c7 ((y \u25c7 y) \u25c7 (y \u25c7 y)))) (h1 x x).symm\n    _ = ((x \u25c7 x) \u25c7 (y \u25c7 y)) := congrArg (fun t => ((x \u25c7 x) \u25c7 t)) (h1 y y).symm\n    _ = (y \u25c7 x) := (h1 y x).symm\nintro x y z\ncalc (x \u25c7 (y \u25c7 z))\n  _ = ((y \u25c7 z) \u25c7 x) := h2 x (y \u25c7 z)\n  _ = ((z \u25c7 y) \u25c7 x) := congrArg (fun t => (t \u25c7 x)) (h2 y z)"
+ }
+]

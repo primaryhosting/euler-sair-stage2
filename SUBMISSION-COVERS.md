@@ -1,0 +1,129 @@
+# SAIR Stage 2 — Ready-to-Submit Covers
+*Christopher Brock · Riemann Labs · frozen 2026-08-25*
+
+Two entries, each a single `solver.py`, each valid for **Solo and Marathon**
+(the same file — `__main__` branches on `JUDGE_MARATHON_MANIFEST`). Upload at
+`playground.sair.foundation`. Competition submissions are private until results.
+
+> **How submission works (no REST API):** the SAIR repo's `submit.py` is a
+> *local* CLI only ("no HTTP server, no submission token, no per-submitter API
+> key"). The real submission is the playground web upload. Paste the cover text
+> below into the submission form's description/notes field if one exists. **If
+> the form has no notes field, prepend the disclosure block (§ each entry) to
+> `solver.py` as a comment before upload — the single-file rule means the
+> disclosure must travel inside the file.**
+
+---
+
+## ENTRY 1 — EULER
+
+| Field | Value |
+|-------|-------|
+| **File to upload** | `EULER-SUBMISSION-2026-08-25.py` |
+| **Size** | 439,674 bytes (limit 500,000) |
+| **SHA-256** | `ac5d1b2f102018d6e2228ff58b50b03641bc8b92a4ab563f7ada9e25617c61c8` |
+| **Tracks** | Solo + Marathon (same file) |
+| **Title** | EULER — a certificate-emitting solver for equational implication |
+
+### Description (paste)
+
+EULER decides `E1 ⇒ E2` over magmas and emits a machine-checkable certificate —
+a finite countermodel for FALSE, a Lean 4 proof for TRUE — behind a strict
+invariant: every emitted answer passes an independent check before submission,
+and no code path leads from a heuristic guess to a finalized answer. Direction
+is read from the public Equational Theories Project implication closure (exact on
+the order-4 core, validated 600/600 against the released evaluation answers);
+FALSE is a hypothesis-keyed finite-model bank plus a stdlib model finder and an
+infinite parity-walk countermodel tier; TRUE is a cascade of matching-chain
+proving, bounded Knuth–Bendix completion with total emission, transitivity
+composition, and ATP-proof replay. Reproducible end-to-end without any model in
+the loop, from public materials.
+
+### Embedded-data disclosure (required — paste, or prepend as a comment)
+
+This solver embeds compressed data, all derived from public sources or generated
+by our own dev-time tools; none encodes a per-problem answer beyond what the
+public implication table already states.
+- **Implication bitmatrix** (~110 KB) — byte-identical to the public ETP
+  `outcomes.json` closure (Tao et al.); direction only.
+- **Equation texts** (~15 KB) — public ETP `equations.txt`.
+- **305 finite-magma tables** (orders 2–9) — counterexample witnesses; Mace4
+  (McCune) dev-time harvest, each re-checked by our own finite evaluator.
+- **390 Lean proofs** — proved dev-time by **Aristotle** (Harmonic's Lean
+  theorem prover); re-verified by the judge at answer time.
+- **Pair-keyed loop certificates** (10 order-5, 8 order-4) — produced dev-time by
+  Vampire (Kovács & Voronkov) / E (Schulz) reconstruction and compile-checked on
+  the judge toolchain by **Axle** (Axiom — Carina Hong's team); regression
+  coverage for released rows, not private-set generalization.
+Mace4, Vampire, E, Aristotle, and Axle are dev-time contributors only — none is
+called at runtime.
+
+### Honest scope (paste)
+
+The released-set solve figure is a *ceiling* that leans on the pair-keyed
+certificates above; the organizers state released rows will not recur privately,
+so it is not a private-set claim. The generalizing evidence is held-out
+(FALSE 120/120 on pairs, 100/100 on hypotheses absent from every released set).
+No result carries an official-judge badge until this run returns.
+
+---
+
+## ENTRY 2 — WILL
+
+| Field | Value |
+|-------|-------|
+| **File to upload** | `WILL-SUBMISSION-2026-08-25.py` |
+| **Size** | 91,419 bytes (limit 500,000) |
+| **SHA-256** | `dc03b32220894e19ca6be5ac30ae999d7185e8f1e1208018381ddf7b65250b2c` |
+| **Tracks** | Solo + Marathon (same file) |
+| **Title** | WILL — technique without the table |
+
+### Description (paste)
+
+WILL is the deliberate counterpart to EULER: the same six ideas, with everything
+memorized stripped away. No implication oracle, no finite-model bank, no borrowed
+certificates — technique only, distilled into algorithms and one prompt. It grows
+counterexample worlds from nothing, walks rewrite chains, grinds a law to its
+collapse, and calls a model, from a single embedded prompt constant, for what the
+machinery cannot reach. Every exit is independently verified before submission,
+exactly as in the flagship. WILL is expected to score below EULER, and that gap is
+the measurement: a perfect score on a settled table proves the table; strip the
+table away and whatever survives is technique.
+
+### Embedded-data disclosure (required — paste, or prepend as a comment)
+
+WILL embeds **no lookup tables, no implication matrix, no answer banks, and no
+per-problem certificates**. The only embedded payload is its own `PROMPT`
+constant — a prompt teaching technique, containing three worked *demonstrations
+of moves* (explicitly framed as re-derivable illustrations, not memorized
+verdicts). There is no compressed data blob to disclose.
+
+### Honest scope (paste)
+
+Mechanical-tier bench, no LLM and no oracle, 100 released problems: FALSE 50/50
+(independently re-checked), TRUE 33/50 (chain + collapse). The LLM tier operates
+only inside the competition sandbox and is unmeasured here. Sample is released,
+not private. No official-judge badge until this run returns.
+
+---
+
+## Links (supplementary — for the description field or a linked page)
+
+- Interactive presentation of the work — Riemann Labs: `/euler`
+  (publish before sharing publicly; private during the competition is fine)
+- Companion paper — *Mathematics in the Age of Mechanical Reproduction* (Brock, 2026)
+- Solver paper — *EULER: A Certificate-Emitting Solver … Packaged to a
+  Reactivation Standard* (contribution pack, §11)
+- Equational Theories Project — github.com/teorth/equational_theories
+- SAIR Stage 2 judge (open) — github.com/SAIRcompetition/equational-theories-lean-stage2
+
+## Pre-upload checklist
+
+- [ ] `python3 -m py_compile solver.py` clean (both files: verified 2026-08-25)
+- [ ] size < 500,000 bytes (EULER 439,674 · WILL 91,419 — both OK)
+- [ ] SHA matches this cover (recompute `shasum -a 256` before upload)
+- [ ] disclosure placed — in the form's notes field, or prepended as a comment
+- [ ] upload each file for **both** Solo and Marathon
+- [ ] if the judge returns `incompatible header` / infrastructure error: that is
+  SAIR-side (documented before); the failfast exits in seconds — report to SAIR,
+  do not treat as a solver defect

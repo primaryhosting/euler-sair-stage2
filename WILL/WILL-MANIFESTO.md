@@ -1,0 +1,15 @@
+# WILL — A Manifesto
+
+EULER is the library. The full implication table of the catalog's core — every pair settled, TRUE or FALSE, before a single search runs. The harvested banks of finite worlds. Three hundred ninety proofs borrowed from Aristotle, disclosed and re-checked. EULER earned its 800/800 ceiling on the released sets with all of it, and we labeled that number a ceiling because it *is* one: it leans on sediment the private evaluation will not repeat.
+
+WILL walks in without it.
+
+No oracle. No banks. No borrowed certificates. The rule that draws the line: sediment is data; technique is code. WILL carries only the code — the six ideas that built EULER, distilled into algorithms and one prompt. Counterexample search that grows small worlds from nothing. A chain prover that walks rewrites. A completion engine that grinds a law down to its collapse. An LLM tier for what the machinery cannot reach, rendered from a single prompt constant. That is the whole inventory. And every exit is verified before it is submitted, same as the flagship — there is still no code path from "WILL believes this" to "WILL submits this."
+
+The owner's brief said it in six words: **"walk in without it. Be elegance in action."**
+
+Say the expectation plainly. WILL is expected to score below EULER. That is the point. The pair is the experiment the paper needs. A perfect score built on a settled table proves the table; it does not prove the solver. Strip the table away and whatever survives is technique. Whatever falls away is sediment. The gap between EULER and WILL is not an embarrassment to be managed. It is the measurement. Whatever the gap turns out to be, it is a finding.
+
+We benched the mechanical tiers before the walk. One hundred released problems, deterministic selection, no LLM, no judge, no precomputed data. The FALSE tier found a countermodel on 50 of 50, every table re-validated by an independent evaluator, median well under a second. The TRUE tier — chain, then collapse — proved 33 of 50; the other 17 burned the full clock and produced nothing, which is how these tiers fail: fast or never. Fourteen emitted Lean bodies were compiled against a replica of the judge's toolchain, 14 for 14; the other 19 were self-verified by the solver's own re-walk and not independently compiled, and we report them as spot-checked, not certified. Combined: 83 of 100 answered, zero wrong emissions detected. Three caveats travel with these numbers. The sample is drawn from released sets, not the private evaluation. The LLM tier exists only inside the competition sandbox and nothing here measures it. And the 17 misses are exactly the population that tier is built to attack — so this is the floor of technique alone, not its ceiling.
+
+There is a scene everyone knows: the kid without the credentials, working the janitor's shift, who solves the board anyway. We are not sentimental about it — the board here is a deterministic judge that cares nothing for the story — but the question the scene asks is the question this experiment asks, seriously: when you take away everything that was handed down, what can the mind in the machine still do?
