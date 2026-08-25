@@ -204,8 +204,8 @@ Maintained across iterations; newest first.
   equality was reversed; the candidate now emits the direct `h lhs rhs`
   certificate for the whole `x = y` class, and all three replacements compile.
   Marathon now matches Solo's 12-round completion and `k=40`/bounded-3-hop
-  tail. Candidate binary of record: **437,402 B, SHA-256
-  `52bcd90f…0fcd303e`**, AST clean and green in the pinned official amd64
+  tail. Candidate binary of record: **442,061 B, SHA-256
+  `e0f7ac84…0fcd303e`**, AST clean and green in the pinned official amd64
   sandbox. The **promotion gate is unchanged**: one fresh official
   judge run of this file; the prior live mirror `EQT02-S00021` stays frozen
   until it is green.

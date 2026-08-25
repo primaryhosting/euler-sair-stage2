@@ -1,8 +1,8 @@
 # Infinite FALSE validation record
 
 Recorded 2026-08-25 for
-`EULER-v8.1-CANDIDATE.py`, 437,402 bytes, SHA-256
-`52bcd90f668873687756fa68becf9d2b9d86b55a6a9b206ac764078b0fcd303e`.
+`EULER-v8.1-CANDIDATE.py`, 442,061 bytes, SHA-256
+`e0f7ac84668873687756fa68becf9d2b9d86b55a6a9b206ac764078b0fcd303e`.
 
 ## AXLE / Axiom
 
