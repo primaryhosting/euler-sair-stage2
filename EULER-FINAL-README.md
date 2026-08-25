@@ -13,8 +13,8 @@ that the SAIR judge accepts.
 
 | | |
 |---|---|
-| **Frozen final pre-submit candidate** | `EULER-v8.1-CANDIDATE.py` — **not promoted without a fresh official judge run** |
-| **Candidate size / SHA-256** | 437,402 bytes · `52bcd90f668873687756fa68becf9d2b9d86b55a6a9b206ac764078b0fcd303e` |
+| **Frozen final pre-submit candidate** | `EULER-SUBMISSION-2026-08-25.py` — **not promoted without a fresh official judge run** |
+| **Candidate size / SHA-256** | 440,436 bytes · `a9675ffba96cd4b5954374d4734582c6b9c6f2592751a8b47a160a04e6514efd` |
 | **Promoted live mirror** | `EQT02-S00021-infra-failfast.py` — prior v8.1 baseline, intentionally unchanged |
 | **Live size / SHA-256** | 402,238 bytes · `33456faa124da32a72019ef045bbfd347a943686b84d833fc0e1d30bf6d81178` |
 | **Compiles** | `python3 -m py_compile` — clean |
@@ -59,7 +59,7 @@ is no separate `submit` message in Solo mode).
 | **`EULER-FINAL-README.md`** | This file — cover, entry point, how to run, status. |
 | **`EULER-METHODOLOGY.md`** | Full algorithm writeup: architecture, direction oracle, FALSE engine, TRUE cascade, soundness argument, validation evidence, honest limits. |
 | **`EULER-v8.1-SUBMISSION-NOTE.md`** | Embedded-data disclosure for the current candidate — the 305-table bank, Mace4 provenance, and ten pair-keyed public order-5 proof DAGs. |
-| **`EULER-v8.1-CANDIDATE.py`** | The isolated research candidate; not yet copied over the promoted live mirror. |
+| **`EULER-SUBMISSION-2026-08-25.py`** | The isolated research candidate; not yet copied over the promoted live mirror. |
 | **`EULER-FINALIZATION-2026-08-25.md`** | Frozen handoff record, exact upload instructions, evidence, caveats, and promotion gate. |
 | **`EULER-v8.1-FINAL.sha256`** | Checksums for the frozen candidate, rollback, and infinite-FALSE validation fixtures. |
 | **`infinite-false-artifacts/`** | AXLE-checked parity-walk and structured-plan Lean fixtures plus the exact validation record. |
@@ -175,7 +175,7 @@ two bullets.
 
 ```bash
 # Compile check (isolated candidate)
-python3 -m py_compile EULER-v8.1-CANDIDATE.py
+python3 -m py_compile EULER-SUBMISSION-2026-08-25.py
 
 # Solo harness drives solve(problem, budget_seconds) per problem and
 # relays the solver's `judge` requests to the SAIR judge; an accepted

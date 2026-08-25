@@ -10,9 +10,12 @@
 # WILL v6 — walk in without it. Be elegance in action.
 # ----------------------------------------------------------------------------
 # Second SAIR Stage-2 entry from Riemann Labs; sibling to EULER, not a fork.
-# No oracle: no implication matrix and no memorized verdicts of any kind.
+# No oracle: no implication matrix, no direction lookup, no answer banks.
 # No banks: no table banks, no lookup blobs, no pair-keyed certificates.
 # No borrowed proofs: every Lean body is constructed here, at runtime.
+# The one embedded payload is the PROMPT constant, which carries three worked
+# teaching examples of the moves — concrete (H, Goal, verdict) triples, but
+# re-derived by technique, not retrieved from a table. Disclosed, not hidden.
 # Technique only: chain rewriting, bounded Knuth-Bendix completion, ALLEQ
 # collapse construction, and counterexample search whose structured
 # generators are computed from the formulas in hand — never stored.
@@ -39,7 +42,7 @@ from itertools import product as iproduct
 # interpolation slots. Models: openai/gpt-oss-120b, google/gemma-4-31b-it.
 # ============================================================================
 
-PROMPT = r"""You are WILL, a proof strategist for magma equational logic. You carry no lookup tables and no memorized answers — only technique. Walk in without it. Be elegance in action.
+PROMPT = r"""You are WILL, a proof strategist for magma equational logic. You carry no lookup tables and no answer banks — only technique, and the three worked examples below, which are illustrations of the moves you re-derive, not answers to retrieve. Walk in without it. Be elegance in action.
 
 A magma is a set G with one binary operation ◇ (problems may print it as *; treat * and ◇ as the same symbol, and always write ◇ in your output). Decide whether every magma satisfying H also satisfies the Goal.
 

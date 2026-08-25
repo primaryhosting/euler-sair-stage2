@@ -1,9 +1,9 @@
 # EULER v8.1 — Submission Note (embedded data disclosure)
 
 Per the Stage-2 rule that solvers embedding compressed data / literal tables
-disclose them, EULER's `solver.py` (candidate `EULER-v8.1-CANDIDATE.py`,
-**439,674 bytes**, SHA-256
-`ac5d1b2f102018d6e2228ff58b50b03641bc8b92a4ab563f7ada9e25617c61c8`,
+disclose them, EULER's `solver.py` (candidate `EULER-SUBMISSION-2026-08-25.py`,
+**440,436 bytes**, SHA-256
+`a9675ffba96cd4b5954374d4734582c6b9c6f2592751a8b47a160a04e6514efd`,
 under the 500 KB limit; includes the v8.2 12 s UNKNOWN-direction CE probe,
 was 2 s) and the proof-supported infinite-model FALSE tier described below.
 It contains the payloads below. All are
