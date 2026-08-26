@@ -1,0 +1,15 @@
+{"id": "wf00", "name": "comm |= left-proj", "equation1": "x * y = y * x", "equation2": "x * y = x"}
+{"id": "wf01", "name": "comm |= right-proj", "equation1": "x * y = y * x", "equation2": "x * y = y"}
+{"id": "wf02", "name": "comm |= idempotent", "equation1": "x * y = y * x", "equation2": "x * x = x"}
+{"id": "wf03", "name": "idempotent |= comm", "equation1": "x * x = x", "equation2": "x * y = y * x"}
+{"id": "wf04", "name": "assoc |= comm", "equation1": "(x * y) * z = x * (y * z)", "equation2": "x * y = y * x"}
+{"id": "wf05", "name": "left-proj |= comm", "equation1": "x * y = x", "equation2": "x * y = y * x"}
+{"id": "wf06", "name": "left-proj |= right-proj", "equation1": "x * y = x", "equation2": "x * y = y"}
+{"id": "wf07", "name": "comm |= assoc-collapse", "equation1": "x * y = y * x", "equation2": "x * y = x * (x * y)"}
+{"id": "wf08", "name": "idempotent |= left-proj", "equation1": "x * x = x", "equation2": "x * y = x"}
+{"id": "wf09", "name": "comm |= x=xx", "equation1": "x * y = y * x", "equation2": "x = x * x"}
+{"id": "wf10", "name": "assoc |= idempotent", "equation1": "(x * y) * z = x * (y * z)", "equation2": "x * x = x"}
+{"id": "wf11", "name": "right-proj |= left-proj", "equation1": "x * y = y", "equation2": "x * y = x"}
+{"id": "wf12", "name": "comm |= right-collapse", "equation1": "x * y = y * x", "equation2": "x * y = y * (y * x)"}
+{"id": "wf13", "name": "left-proj |= idempotent", "equation1": "x * y = x", "equation2": "x * x = y"}
+{"id": "wf14", "name": "comm |= const", "equation1": "x * y = y * x", "equation2": "x * y = z * w"}

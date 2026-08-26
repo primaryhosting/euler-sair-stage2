@@ -19,7 +19,7 @@ Two entries, each a single `solver.py`, each valid for **Solo and Marathon**
 
 | Field | Value |
 |-------|-------|
-| **File to upload** | `EULER-SUBMISSION-2026-08-25.py` |
+| **File to upload** | `solver.py` — this packet's `solvers/EULER.py`, renamed to `solver.py` for upload (the judge requires that exact name) |
 | **Size** | 442,061 bytes (limit 500,000) |
 | **SHA-256** | `e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329` |
 | **Tracks** | Solo + Marathon (same file) |
@@ -76,7 +76,7 @@ E, Aristotle, and Axle are dev-time contributors only — none runs at runtime.
 
 The 800/800 released-set solve figure is a *ceiling* built partly from the
 exact-row certificates above — it is **not** a private-set claim and **not** an
-official-judge result. The figure that generalizes is held-out and reproducible (`HELD-OUT-COHORTS/`,
+official-judge result. The figure that generalizes is held-out and reproducible (`evidence/held-out-cohorts/`,
 seeded cohorts held out from every released set by construction): FALSE 120/120
 on pairs, 100/100 on hypotheses absent from every released set. No result carries
 an official-judge badge until this run returns.
@@ -87,9 +87,9 @@ an official-judge badge until this run returns.
 
 | Field | Value |
 |-------|-------|
-| **File to upload** | `WILL-SUBMISSION-2026-08-25.py` |
-| **Size** | 91,125 bytes (limit 500,000) |
-| **SHA-256** | `5f1a174f72eccb9c72fad16aca49ade7de3a803e239c28e73463f360be5bc66a` |
+| **File to upload** | `solver.py` — this packet's `solvers/WILL.py`, renamed to `solver.py` for upload (the judge requires that exact name) |
+| **Size** | 91,230 bytes (limit 500,000) |
+| **SHA-256** | `90aa400c872cc071d19bb3786568d469ba4d703e5f467fa544756b254a639468` |
 | **Tracks** | Solo + Marathon (same file) |
 | **Title** | WILL — technique without the table |
 
@@ -165,7 +165,7 @@ them produced was independently re-verified before the judge saw it.
 ## Pre-upload checklist
 
 - [ ] `python3 -m py_compile solver.py` clean (both files: verified 2026-08-25)
-- [ ] size < 500,000 bytes (EULER 442,061 · WILL 91,125 — both OK)
+- [ ] size < 500,000 bytes (EULER 442,061 · WILL 91,230 — both OK)
 - [ ] SHA matches this cover (recompute `shasum -a 256` before upload)
 - [ ] disclosure placed — in the form's notes field, or prepended as a comment
 - [ ] upload each file for **both** Solo and Marathon

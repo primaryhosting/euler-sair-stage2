@@ -36,12 +36,15 @@ per-variable binders. Trusted base of the judge: the Lean v4.32.2 kernel
 dependency-closure audit rejecting the `sorry` family, metaprogramming, and
 unsafe primitives.
 
-**Remark (statement fidelity).** The formal FALSE format is strictly
-narrower than the semantic definition: implications refutable only by
-infinite magmas admit no certificate in it. This is the organizers'
-rendering decision; it is recorded because two public instances (§7) may
-lie in that gap, and because no downstream verification can detect a
-problem/statement mismatch — the central claim of the accompanying paper,
+**Remark (statement fidelity).** The FALSE format quantifies over an
+arbitrary magma, so it admits infinite carriers; what is narrower is only the
+*mechanical finite shape* (`Fin n` table + `decideFin!`). An infinite
+counterexample is certifiable, but requires a genuine Lean proof of the
+hypothesis and the refutation rather than a decidable table. It is recorded
+because two public instances (§7) lie outside both our finite search and
+EULER's proof-supported infinite recognizer, and because no downstream
+verification can detect a problem/statement mismatch — the central claim of
+the accompanying paper,
 and twice observed empirically in this project's own tooling
 (`4-STATEMENT-FIDELITY.md`, failures A and B).
 
@@ -79,7 +82,7 @@ it per answer.
 excluded from every released problem set, and on 100 instances whose
 hypothesis law appears in no released set, the bank-plus-search pipeline
 produced valid witnesses in 120/120 and 100/100 cases. Reproducible: the
-seeded generator and immutable cohort manifests are in `HELD-OUT-COHORTS/`
+seeded generator and immutable cohort manifests are in `evidence/held-out-cohorts/`
 (`reproduce_heldout.py`, `RESULTS.md`); both cohorts are held out from every
 released set by construction.
 *Status:* computationally verified. This — not the released-set sweep,
@@ -204,7 +207,9 @@ For every reported figure, the pair (what was checked, trusted base):
    countermodel through order 8, search exhausted) and 2531 ⇒ 4307 (orders
    2–6 exhausted; order 7 terminated on budget). Non-existence of finite
    countermodels is *not* claimed; if either implication fails only in
-   infinite magmas, it is outside the certificate format (§1, Remark).
+   infinite magmas, it needs a proof-supported infinite certificate rather
+   than a finite table (§1, Remark) — permitted by the format but not reached
+   by our finite search or the parity recognizer.
 3. **The runtime 3-hop transitivity tier is strictly weaker than the
    dev-time search that motivated it** (its forward frontier is drawn from
    the 2-hop candidate list rather than all successors); recorded as a

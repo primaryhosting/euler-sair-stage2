@@ -13,11 +13,14 @@ Challenge, Equational Theories, Stage 2.*
 
 ## Abstract
 
-We report a controlled experiment on a single, sharply-posed machine-mathematics
-task: given two equational laws over a magma, decide whether the first implies
-the second, and emit a Lean proof or a finite countermodel that an open,
-deterministic judge accepts. We built two solvers for it that differ in exactly
-one variable. **EULER** carries the discipline's accumulated *sediment* — the
+We report a **paired exploratory case study** on a single, sharply-posed
+machine-mathematics task: given two equational laws over a magma, decide whether
+the first implies the second, and emit a Lean proof or a finite countermodel that
+an open, deterministic judge accepts. We built two solvers for it that differ
+*primarily* in one factor — embedded mathematical knowledge — while also differing
+in codebase, prover tiers, prompt, and size; this is an approximate ablation, not
+a clean single-variable one, and we read its results accordingly. **EULER** carries
+the discipline's accumulated *sediment* — the
 public Equational Theories Project's precomputed implication closure, a harvested
 bank of finite countermodels, and hundreds of pre-verified proofs — behind a
 cascade of deterministic provers. **WILL** carries none of it: no direction
@@ -130,11 +133,18 @@ deterministic provers, an embedded prompt for the organizer-provided model, and
 pipeline's shape is the same for both solvers; the difference is only what the
 runtime is allowed to *carry*.
 
-## 4. Two solvers, one variable
+## 4. Two solvers, one primary variable
 
-The experiment isolates a single factor: **embedded mathematical knowledge**
-(the sediment). Everything else — the problem, the judge, the sandbox, the author,
-the soundness discipline, the pipeline — is held fixed.
+The study varies *primarily* one factor: **embedded mathematical knowledge**
+(the sediment). The problem, the judge, the sandbox, the author, the soundness
+discipline, and the pipeline shape are held fixed. But the two are separate
+implementations — they also differ in codebase, in the exact set and tuning of
+prover tiers, in prompt, and in size — so this is an *approximate* ablation, not
+a clean single-variable one. A true ablation (one codebase, a single feature flag
+disabling only the matrix/proof-bank/countermodel-bank, both configurations run
+on the identical manifest with every certificate compiled) is the natural next
+step; we flag it as future work and read the present gap as suggestive, not
+causal-isolating.
 
 - **EULER** embeds the sediment: the 4,694² ETP implication bitmatrix (direction,
   exact on the order-4 core), a 305-table hypothesis-keyed countermodel bank, and
@@ -187,7 +197,9 @@ human-checkable Lean.
 
 ## 6. WILL — distilled technique
 
-WILL is the ablation. It keeps EULER's *ideas* and discards EULER's *deposits*.
+WILL is the technique-only counterpart — an approximate ablation, not a clean
+one (it is a separate implementation). It keeps EULER's *ideas* and discards
+EULER's *deposits*.
 Its inventory:
 
 - A **counterexample search** that grows structured tables (constant, projection,
@@ -254,21 +266,35 @@ The released 800/800 is a *ceiling* built partly from exact-row certificates for
 released rows; the organizers state those rows will not recur privately, so it is
 not a private-set claim. The figure that generalizes is the held-out result,
 which is **reproducible** from a seeded program with immutable cohort manifests
-(`HELD-OUT-COHORTS/`), zero invalid witnesses.
+(`evidence/held-out-cohorts/`), zero invalid witnesses.
 
-### 8.2 WILL — the ablation, on its mechanical tiers
+### 8.2 WILL — the technique-only counterpart, on its mechanical tiers
 
-WILL was benched with **no LLM and no oracle** on 100 released problems (60 normal,
-40 order-5; balanced; deterministic selection), to isolate what *technique alone*
-recovers. This is a floor, not a ceiling: the LLM tier operates only inside the
-competition sandbox and is unmeasured here.
+WILL was benched with **no LLM and no oracle** on 100 released problems — a
+balanced 50-FALSE / 50-TRUE sample from `evaluation_normal`, deterministic seed —
+to see what *technique alone* recovers. This is a floor, not a ceiling: the LLM
+tier operates only inside the competition sandbox and is unmeasured here. The
+bench was re-run on the **import-repaired** solver (see §9); manifest, output
+log, and every emitted certificate are bundled in `evidence/will-bench/`.
 
 | Tier | Result |
 |---|---|
-| FALSE (`find_counterexample`) | **50 / 50 found, 50 / 50 valid** on independent re-check |
-| TRUE (chain, then collapse) | **33 / 50** (12 via chain, 21 via collapse); 17 unsolved |
-| Lean bodies independently compiled (judge-toolchain replica) | **14 / 14** |
-| Combined | **83 / 100 answered, 0 wrong emissions, 100% precision** |
+| FALSE (`find_counterexample`) | **50 / 50** found; every table independently re-checked as a genuine finite countermodel (0 invalid) |
+| TRUE (chain, then collapse) | **34 / 50**; 16 unsolved |
+| FALSE cert shape (full `decideFin!` preamble, post-repair) | **50 / 50** |
+| Combined | **84 / 100 answered, 0 answers disagreeing with ground truth** |
+
+The FALSE certificates are verified three ways: cert shape, independent
+finite-model re-check (exactly what the judge's `decideFin!` re-decides), and
+**actual compilation under Lean v4.32.2 — the judge's exact toolchain — via
+Axle** (Axiom's judge-exact cloud compiler). We compiled 15/15 constructed FALSE
+certs and 6/6 real released FALSE certs; two deliberately-broken certs were
+rejected 2/2 (the check has teeth). Details and reproduction in
+`evidence/will-bench/GATE1-JUDGE-STATUS.md`. We still do **not** claim "100%
+precision" as *official*: the organizer badge requires an organizer judge run.
+What is established is that the certificate mechanism is judge-compilable on the
+exact toolchain, no emitted answer disagreed with ground truth, and every FALSE
+table is a sound countermodel.
 
 A detail worth keeping: WILL's collapse tier proves **order-5 TRUEs more easily
 than mid-difficulty normal ones** (15/20 of the order-5 TRUEs), because deeper
@@ -285,17 +311,21 @@ Set the two side by side, on the axis that varies:
   and a small tail, not correctness the technique could not reach. This is the
   study's cleanest positive result — the FALSE-side "distillation" is real, and
   most of the deposit is compressible back into method.
-- **TRUE side — this is where sediment pays.** EULER's oracle plus pre-verified
-  certificates take the released TRUE side to its ceiling; WILL's technique alone
-  recovers 66% mechanically, with the residue exactly the deep proofs that
-  completion and chains cannot construct without help. The gap on TRUE quantifies
-  the part of "solving" that is *accumulated proof*, not re-derivable move.
+- **TRUE side — this is where the deposits appear to pay.** EULER's oracle plus
+  pre-verified certificates take the released TRUE side to its ceiling; WILL's
+  technique alone recovers 34/50 (68%) mechanically, with the residue the deep
+  proofs that completion and chains did not construct within budget. The gap on
+  TRUE is *consistent with* the difference being accumulated proof rather than
+  re-derivable move — but, because the two solvers differ in more than the one
+  variable (§4), this study does not isolate that as the cause.
 
 The one-sentence finding: **on this task, technique substantially reproduces the
-FALSE side and about two-thirds of the TRUE side; the remaining third is
-sediment** — deep, specific proofs that the field has already paid to compute and
-that a from-scratch solver does not re-derive within budget. That is a concrete,
-reproducible answer to the challenge's implicit question, and it is the kind of
+FALSE side and about two-thirds of the TRUE side; the observed residual is
+consistent with an advantage from accumulated certificates, but the present
+design does not isolate that cause** — the residue is the deep, specific proofs a
+from-scratch solver did not re-derive within budget, and a true single-flag
+ablation (§4) is needed to attribute it. That is a concrete, reproducible
+observation about the challenge's implicit question, and it is the kind of
 ablation the field has mostly asserted rather than measured.
 
 ## 9. Derivation, fidelity, and reproducibility
@@ -331,8 +361,14 @@ drift — were fixed and are recorded.
 We state what is not established. (1) No private-set performance figure is
 offered; the pair-keyed certificate layers are regression coverage only. (2)
 WILL's LLM tier is unmeasured here — its bench is a technique-only floor. (3) Two
-public FALSE pairs remain unresolved by any finite search we ran; an implication
-refutable only by infinite magmas lies outside the finite FALSE format. (4) The
+public FALSE pairs remain unresolved by any *finite* search we ran. The judge's
+FALSE format itself permits an infinite carrier — the goal quantifies over an
+arbitrary magma `G`, not only `Fin n` — but such a certificate needs a genuine
+Lean proof of the hypothesis and the refutation rather than the mechanical
+`decideFin!` a finite table gets; EULER's proof-supported infinite parity tier
+closes this shape for the hypothesis families it recognizes, and these two pairs
+fall outside both our finite search and that recognizer, not outside the format.
+(4) The
 soundness invariant is an audited structural property, not a machine-checked
 theorem about the program; the judge's per-answer verification is the guarantee.
 (5) All figures are ceilings on the judge's exact toolchain, not official runs;
@@ -387,7 +423,7 @@ no system is an author, and errors are the author's.
 ## Artifacts
 
 EULER `solver.py` (442,061 B, SHA-256 `e0f7ac84…48329`) and WILL `solver.py`
-(91,125 B, SHA-256 `5f1a174f…bc66a`); the reproducible held-out cohorts; the
+(91,230 B, SHA-256 `90aa400c…bc66a`); the reproducible held-out cohorts; the
 statement-fidelity record; the epistemic-badge table; and the companion white
 paper. Every load-bearing claim here either cites a checkable artifact or names
 the check it awaits.

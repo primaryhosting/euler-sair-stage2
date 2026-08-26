@@ -164,8 +164,11 @@ labor, stated honestly, is the paper's subject.
   strength rests on the generalizing tiers and the held-out FALSE evidence
   — and no private-set number is claimed.
 - Two public FALSE pairs remain unresolved by any finite search we ran
-  (orders exhausted are stated exactly); implications refutable only by
-  infinite models are outside the competition's FALSE certificate format.
+  (orders exhausted are stated exactly). The FALSE format permits an infinite
+  carrier — but such a certificate needs a genuine Lean proof rather than the
+  finite `decideFin!` table; these two pairs fall outside both our finite
+  search and EULER's proof-supported infinite parity recognizer, not outside
+  the format.
 - The runtime 3-hop tier's forward frontier is narrower than the dev-time
   version's (documented in the dependency map).
 

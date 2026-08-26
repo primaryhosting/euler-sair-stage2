@@ -16,7 +16,7 @@ re-verified by the competition's open, deterministic judge.
 | Entry | File | SHA-256 | Size |
 |-------|------|---------|------|
 | **EULER** | `solvers/EULER.py` | `e0f7ac84…48329` | 442,061 B |
-| **WILL** | `solvers/WILL.py` | `5f1a174f…bc66a` | 91,125 B |
+| **WILL** | `solvers/WILL.py` | `90aa400c…bc66a` | 91,230 B |
 
 Full SHA-256 in `CHECKSUMS.sha256`. Both compile under Python 3.11 stdlib only,
 under the 500 KB limit, with the embedded-data disclosure inline at the top of
@@ -36,9 +36,18 @@ The gap between them is the finding.
   **embedded-data disclosure**, honest scope, **acknowledgments**, links,
   and a pre-upload checklist.
 - `solvers/` — the two entries.
-- `papers/` — the white paper *Mathematics in the Age of Mechanical
-  Reproduction* (the epistemic framework this submission is built to satisfy)
-  and the EULER solver paper.
+- `papers/` — **two designated white papers** plus one supplementary study:
+  1. *Mathematics in the Age of Mechanical Reproduction* — the epistemic framework
+     this submission is built to satisfy (with a dated `ERRATA-` note correcting the
+     Stage-2 chronology and stamping facts current as of 2026-08-26).
+  2. *EULER: A Certificate-Emitting Solver for Equational Implication* — the
+     technical paper.
+  3. *Sediment and Technique* (`sediment-and-technique-competition-paper.md`) —
+     a **supplementary** paired exploratory case study (EULER vs WILL). Held as
+     supplementary, not a designated white paper, until its comparison is
+     strengthened to a true single-flag ablation.
+- `HOW-WE-BUILT-IT.md` / `HOW-TO-CHECK.md` — the build story and a command-by-command
+  verification guide (nothing needs network or credits except the final official run).
 - `evidence/` — the reproducible held-out cohorts (seeded generator, immutable
   cohort manifests, result log) and the epistemic-badge table.
 - `CHECKSUMS.sha256` — verify with `shasum -a 256 -c CHECKSUMS.sha256`.

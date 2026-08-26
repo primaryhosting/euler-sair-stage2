@@ -1520,7 +1520,12 @@ LLM_MODELS = ("openai/gpt-oss-120b", "google/gemma-4-31b-it")
 
 # Protocol shell (verbatim from the proven EULER reference).
 
-_LEAN_PREAMBLE = "import JudgeProblem\n\n"
+_LEAN_PREAMBLE = (
+    "import JudgeProblem\n"
+    "import JudgeDecide.DecideBang\n"
+    "import JudgeFinOp.MemoFinOp\n"
+    "open MemoFinOp\n\n"
+)
 _JUDGE_INFRA_DOWN = False
 
 

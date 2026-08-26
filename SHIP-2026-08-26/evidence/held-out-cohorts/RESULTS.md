@@ -1,7 +1,8 @@
 # Held-out FALSE cohorts — reproducible result log
 
 Regenerate: `python3 reproduce_heldout.py` (deterministic; same seeds → same
-cohorts → same result). Solver: `EULER-SUBMISSION-2026-08-25.py`.
+cohorts → same result). Solver: `../EULER-SUBMISSION-2026-08-25.py`. Exclusion set:
+bundled `released_index.json` (800 released pairs / 497 released hypotheses).
 
 ## Cohort A — held-out order-4 FALSE (seed 12345)
 Selection: random order-4 pairs the embedded oracle calls FALSE, **excluding

@@ -1,0 +1,50 @@
+{"id": "heldout_true_000", "eq1_id": 2537, "eq2_id": 1262, "equation1": "x = (y \u25c7 ((y \u25c7 x) \u25c7 z)) \u25c7 y", "equation2": "x = x \u25c7 (((y \u25c7 z) \u25c7 y) \u25c7 x)"}
+{"id": "heldout_true_001", "eq1_id": 3244, "eq2_id": 579, "equation1": "x = (((y \u25c7 z) \u25c7 w) \u25c7 w) \u25c7 z", "equation2": "x = y \u25c7 (z \u25c7 (z \u25c7 (z \u25c7 x)))"}
+{"id": "heldout_true_002", "eq1_id": 971, "eq2_id": 759, "equation1": "x = y \u25c7 ((z \u25c7 y) \u25c7 (z \u25c7 w))", "equation2": "x = y \u25c7 (z \u25c7 ((y \u25c7 x) \u25c7 z))"}
+{"id": "heldout_true_003", "eq1_id": 1172, "eq2_id": 262, "equation1": "x = y \u25c7 ((z \u25c7 (y \u25c7 z)) \u25c7 y)", "equation2": "x = ((x \u25c7 y) \u25c7 x) \u25c7 z"}
+{"id": "heldout_true_004", "eq1_id": 1982, "eq2_id": 4336, "equation1": "x = (y \u25c7 (z \u25c7 y)) \u25c7 (y \u25c7 w)", "equation2": "x \u25c7 (y \u25c7 x) = z \u25c7 (w \u25c7 z)"}
+{"id": "heldout_true_005", "eq1_id": 2099, "eq2_id": 838, "equation1": "x = ((y \u25c7 x) \u25c7 y) \u25c7 (x \u25c7 z)", "equation2": "x = x \u25c7 ((y \u25c7 x) \u25c7 (z \u25c7 x))"}
+{"id": "heldout_true_006", "eq1_id": 1193, "eq2_id": 2383, "equation1": "x = y \u25c7 ((z \u25c7 (z \u25c7 w)) \u25c7 y)", "equation2": "x = (y \u25c7 (z \u25c7 (y \u25c7 x))) \u25c7 z"}
+{"id": "heldout_true_007", "eq1_id": 4054, "eq2_id": 3802, "equation1": "x \u25c7 y = (z \u25c7 (w \u25c7 w)) \u25c7 x", "equation2": "x \u25c7 y = (z \u25c7 y) \u25c7 (x \u25c7 x)"}
+{"id": "heldout_true_008", "eq1_id": 2123, "eq2_id": 1383, "equation1": "x = ((y \u25c7 x) \u25c7 z) \u25c7 (w \u25c7 u)", "equation2": "x = y \u25c7 (((z \u25c7 z) \u25c7 x) \u25c7 x)"}
+{"id": "heldout_true_009", "eq1_id": 1997, "eq2_id": 3701, "equation1": "x = (y \u25c7 (z \u25c7 z)) \u25c7 (y \u25c7 y)", "equation2": "x \u25c7 x = (y \u25c7 z) \u25c7 (y \u25c7 w)"}
+{"id": "heldout_true_010", "eq1_id": 2969, "eq2_id": 3469, "equation1": "x = ((y \u25c7 (y \u25c7 z)) \u25c7 w) \u25c7 y", "equation2": "x \u25c7 x = x \u25c7 ((y \u25c7 z) \u25c7 z)"}
+{"id": "heldout_true_011", "eq1_id": 1795, "eq2_id": 3730, "equation1": "x = (y \u25c7 z) \u25c7 ((z \u25c7 y) \u25c7 z)", "equation2": "x \u25c7 y = (x \u25c7 y) \u25c7 (z \u25c7 w)"}
+{"id": "heldout_true_012", "eq1_id": 189, "eq2_id": 3385, "equation1": "x = (y \u25c7 z) \u25c7 (x \u25c7 w)", "equation2": "x \u25c7 y = z \u25c7 (x \u25c7 (y \u25c7 z))"}
+{"id": "heldout_true_013", "eq1_id": 2166, "eq2_id": 906, "equation1": "x = ((y \u25c7 z) \u25c7 x) \u25c7 (y \u25c7 y)", "equation2": "x = y \u25c7 ((y \u25c7 x) \u25c7 (x \u25c7 x))"}
+{"id": "heldout_true_014", "eq1_id": 3589, "eq2_id": 4511, "equation1": "x \u25c7 y = z \u25c7 ((x \u25c7 y) \u25c7 w)", "equation2": "x \u25c7 (y \u25c7 z) = (x \u25c7 y) \u25c7 y"}
+{"id": "heldout_true_015", "eq1_id": 239, "eq2_id": 3014, "equation1": "x = (y \u25c7 (z \u25c7 x)) \u25c7 y", "equation2": "x = ((y \u25c7 (z \u25c7 z)) \u25c7 y) \u25c7 w"}
+{"id": "heldout_true_016", "eq1_id": 992, "eq2_id": 4222, "equation1": "x = y \u25c7 ((z \u25c7 z) \u25c7 (w \u25c7 w))", "equation2": "x \u25c7 y = ((z \u25c7 y) \u25c7 w) \u25c7 z"}
+{"id": "heldout_true_017", "eq1_id": 613, "eq2_id": 1521, "equation1": "x = y \u25c7 (z \u25c7 (w \u25c7 (u \u25c7 v)))", "equation2": "x = (y \u25c7 y) \u25c7 (x \u25c7 (z \u25c7 x))"}
+{"id": "heldout_true_018", "eq1_id": 1959, "eq2_id": 4386, "equation1": "x = (y \u25c7 (z \u25c7 x)) \u25c7 (x \u25c7 y)", "equation2": "x \u25c7 (x \u25c7 x) = (y \u25c7 x) \u25c7 y"}
+{"id": "heldout_true_019", "eq1_id": 800, "eq2_id": 4388, "equation1": "x = y \u25c7 (z \u25c7 ((w \u25c7 y) \u25c7 u))", "equation2": "x \u25c7 (x \u25c7 x) = (y \u25c7 y) \u25c7 x"}
+{"id": "heldout_true_020", "eq1_id": 2966, "eq2_id": 181, "equation1": "x = ((y \u25c7 (y \u25c7 z)) \u25c7 z) \u25c7 z", "equation2": "x = (y \u25c7 y) \u25c7 (y \u25c7 z)"}
+{"id": "heldout_true_021", "eq1_id": 98, "eq2_id": 3482, "equation1": "x = y \u25c7 (z \u25c7 (w \u25c7 u))", "equation2": "x \u25c7 x = y \u25c7 ((y \u25c7 x) \u25c7 y)"}
+{"id": "heldout_true_022", "eq1_id": 2201, "eq2_id": 1201, "equation1": "x = ((y \u25c7 z) \u25c7 z) \u25c7 (y \u25c7 z)", "equation2": "x = y \u25c7 ((z \u25c7 (w \u25c7 x)) \u25c7 u)"}
+{"id": "heldout_true_023", "eq1_id": 1748, "eq2_id": 4204, "equation1": "x = (y \u25c7 y) \u25c7 ((z \u25c7 z) \u25c7 z)", "equation2": "x \u25c7 y = ((z \u25c7 x) \u25c7 w) \u25c7 y"}
+{"id": "heldout_true_024", "eq1_id": 1554, "eq2_id": 2127, "equation1": "x = (y \u25c7 z) \u25c7 (x \u25c7 (x \u25c7 z))", "equation2": "x = ((y \u25c7 y) \u25c7 x) \u25c7 (y \u25c7 x)"}
+{"id": "heldout_true_025", "eq1_id": 937, "eq2_id": 151, "equation1": "x = y \u25c7 ((y \u25c7 z) \u25c7 (z \u25c7 w))", "equation2": "x = (x \u25c7 x) \u25c7 (x \u25c7 x)"}
+{"id": "heldout_true_026", "eq1_id": 1168, "eq2_id": 910, "equation1": "x = y \u25c7 ((z \u25c7 (y \u25c7 y)) \u25c7 y)", "equation2": "x = y \u25c7 ((y \u25c7 x) \u25c7 (y \u25c7 y))"}
+{"id": "heldout_true_027", "eq1_id": 2593, "eq2_id": 3990, "equation1": "x = (y \u25c7 ((z \u25c7 y) \u25c7 z)) \u25c7 y", "equation2": "x \u25c7 y = (z \u25c7 (x \u25c7 x)) \u25c7 z"}
+{"id": "heldout_true_028", "eq1_id": 1542, "eq2_id": 3064, "equation1": "x = (y \u25c7 y) \u25c7 (z \u25c7 (y \u25c7 w))", "equation2": "x = (((x \u25c7 x) \u25c7 y) \u25c7 z) \u25c7 w"}
+{"id": "heldout_true_029", "eq1_id": 1187, "eq2_id": 1180, "equation1": "x = y \u25c7 ((z \u25c7 (z \u25c7 y)) \u25c7 w)", "equation2": "x = y \u25c7 ((z \u25c7 (z \u25c7 x)) \u25c7 x)"}
+{"id": "heldout_true_030", "eq1_id": 3070, "eq2_id": 3081, "equation1": "x = (((x \u25c7 y) \u25c7 x) \u25c7 y) \u25c7 z", "equation2": "x = (((x \u25c7 y) \u25c7 y) \u25c7 z) \u25c7 x"}
+{"id": "heldout_true_031", "eq1_id": 1283, "eq2_id": 631, "equation1": "x = y \u25c7 (((x \u25c7 x) \u25c7 z) \u25c7 z)", "equation2": "x = x \u25c7 (y \u25c7 ((x \u25c7 x) \u25c7 z))"}
+{"id": "heldout_true_032", "eq1_id": 2796, "eq2_id": 3509, "equation1": "x = ((y \u25c7 z) \u25c7 (y \u25c7 z)) \u25c7 y", "equation2": "x \u25c7 y = x \u25c7 ((x \u25c7 x) \u25c7 y)"}
+{"id": "heldout_true_033", "eq1_id": 884, "eq2_id": 3474, "equation1": "x = y \u25c7 ((x \u25c7 y) \u25c7 (y \u25c7 z))", "equation2": "x \u25c7 x = y \u25c7 ((x \u25c7 y) \u25c7 x)"}
+{"id": "heldout_true_034", "eq1_id": 272, "eq2_id": 3710, "equation1": "x = ((y \u25c7 x) \u25c7 x) \u25c7 z", "equation2": "x \u25c7 x = (y \u25c7 z) \u25c7 (w \u25c7 u)"}
+{"id": "heldout_true_035", "eq1_id": 2377, "eq2_id": 446, "equation1": "x = (y \u25c7 (z \u25c7 (x \u25c7 w))) \u25c7 y", "equation2": "x = x \u25c7 (y \u25c7 (z \u25c7 (x \u25c7 x)))"}
+{"id": "heldout_true_036", "eq1_id": 2057, "eq2_id": 4586, "equation1": "x = ((x \u25c7 y) \u25c7 x) \u25c7 (z \u25c7 y)", "equation2": "(x \u25c7 x) \u25c7 x = (x \u25c7 y) \u25c7 z"}
+{"id": "heldout_true_037", "eq1_id": 1367, "eq2_id": 365, "equation1": "x = y \u25c7 (((z \u25c7 y) \u25c7 x) \u25c7 y)", "equation2": "x \u25c7 x = (y \u25c7 x) \u25c7 y"}
+{"id": "heldout_true_038", "eq1_id": 1619, "eq2_id": 809, "equation1": "x = (y \u25c7 z) \u25c7 (w \u25c7 (w \u25c7 y))", "equation2": "x = y \u25c7 (z \u25c7 ((w \u25c7 w) \u25c7 w))"}
+{"id": "heldout_true_039", "eq1_id": 94, "eq2_id": 713, "equation1": "x = y \u25c7 (z \u25c7 (w \u25c7 x))", "equation2": "x = y \u25c7 (y \u25c7 ((y \u25c7 x) \u25c7 x))"}
+{"id": "heldout_true_040", "eq1_id": 4188, "eq2_id": 332, "equation1": "x \u25c7 y = ((y \u25c7 z) \u25c7 w) \u25c7 z", "equation2": "x \u25c7 y = y \u25c7 (x \u25c7 x)"}
+{"id": "heldout_true_041", "eq1_id": 918, "eq2_id": 4014, "equation1": "x = y \u25c7 ((y \u25c7 y) \u25c7 (x \u25c7 z))", "equation2": "x \u25c7 y = (z \u25c7 (y \u25c7 z)) \u25c7 y"}
+{"id": "heldout_true_042", "eq1_id": 2209, "eq2_id": 1048, "equation1": "x = ((y \u25c7 z) \u25c7 z) \u25c7 (w \u25c7 z)", "equation2": "x = x \u25c7 ((y \u25c7 (y \u25c7 y)) \u25c7 x)"}
+{"id": "heldout_true_043", "eq1_id": 2529, "eq2_id": 2327, "equation1": "x = (y \u25c7 ((x \u25c7 z) \u25c7 w)) \u25c7 u", "equation2": "x = (y \u25c7 (y \u25c7 (x \u25c7 x))) \u25c7 x"}
+{"id": "heldout_true_044", "eq1_id": 599, "eq2_id": 2696, "equation1": "x = y \u25c7 (z \u25c7 (w \u25c7 (z \u25c7 y)))", "equation2": "x = ((y \u25c7 x) \u25c7 (x \u25c7 x)) \u25c7 x"}
+{"id": "heldout_true_045", "eq1_id": 3856, "eq2_id": 3688, "equation1": "x \u25c7 y = (z \u25c7 w) \u25c7 (u \u25c7 x)", "equation2": "x \u25c7 x = (y \u25c7 y) \u25c7 (y \u25c7 y)"}
+{"id": "heldout_true_046", "eq1_id": 1622, "eq2_id": 1756, "equation1": "x = (y \u25c7 z) \u25c7 (w \u25c7 (w \u25c7 u))", "equation2": "x = (y \u25c7 z) \u25c7 ((x \u25c7 x) \u25c7 y)"}
+{"id": "heldout_true_047", "eq1_id": 3226, "eq2_id": 2897, "equation1": "x = (((y \u25c7 z) \u25c7 z) \u25c7 w) \u25c7 u", "equation2": "x = ((x \u25c7 (y \u25c7 z)) \u25c7 w) \u25c7 w"}
+{"id": "heldout_true_048", "eq1_id": 3251, "eq2_id": 4639, "equation1": "x = (((y \u25c7 z) \u25c7 w) \u25c7 u) \u25c7 u", "equation2": "(x \u25c7 y) \u25c7 x = (y \u25c7 z) \u25c7 y"}
+{"id": "heldout_true_049", "eq1_id": 2219, "eq2_id": 1221, "equation1": "x = ((y \u25c7 z) \u25c7 w) \u25c7 (y \u25c7 z)", "equation2": "x = y \u25c7 ((z \u25c7 (w \u25c7 u)) \u25c7 u)"}

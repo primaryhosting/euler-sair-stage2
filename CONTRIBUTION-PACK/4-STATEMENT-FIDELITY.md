@@ -32,11 +32,15 @@ Two fidelity observations worth stating rather than assuming:
 - The formal statement quantifies over **all types with a magma structure**,
   including infinite ones — faithful to "every magma," with no hidden
   finiteness restriction.
-- The FALSE certificate shape (`Fin n` table + `decideFin!`) is *narrower*
-  than the informal "exhibit a counterexample": implications refutable only
-  by infinite models cannot be certified FALSE in this format. This is the
-  organizers' rendering decision, not ours; we record it because our two
-  unresolved public FALSE pairs may live exactly in that gap.
+- The *finite* certificate shape (`Fin n` table + `decideFin!`) is only one
+  way to satisfy the FALSE format. The format itself quantifies over an
+  arbitrary magma `G`, so an infinite carrier is permitted — but it must come
+  with a genuine Lean proof of the hypothesis and the refutation, since
+  `decideFin!` only discharges a finite table. EULER supplies exactly such a
+  proof-supported infinite certificate (its parity tier) for the hypothesis
+  families it recognizes. We record this because our two unresolved public
+  FALSE pairs fall outside both our finite search and that recognizer — not
+  outside the format.
 
 ## 2. Semantic change log (every rendering decision between problem text and Lean)
 

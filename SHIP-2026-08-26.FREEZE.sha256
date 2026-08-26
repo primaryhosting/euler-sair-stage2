@@ -1,0 +1,9 @@
+# SAIR Stage 2 ship freeze — Riemann Labs — 2026-08-26
+# Archive
+bbf5d5b900decbb5ba1675e6025eeaa4b0222d9ee6ed81363ba2c1f4297a53b9  SHIP-2026-08-26.zip
+# Solvers (also inside the archive + in SUBMISSION-NOTES)
+e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329  SHIP-2026-08-26/solvers/EULER.py   # 442061 B
+90aa400c872cc071d19bb3786568d469ba4d703e5f467fa544756b254a639468  SHIP-2026-08-26/solvers/WILL.py    # 91230 B
+# Held-out exclusion index (provenance in evidence/held-out-cohorts/PROVENANCE.md)
+92059bced914e39637adf79eb9d8225a1435b4eeed12e997e4e39368b6a41d27  released_index.json
+# Packet manifest: SHIP-2026-08-26/CHECKSUMS.sha256 covers all 45 packet files

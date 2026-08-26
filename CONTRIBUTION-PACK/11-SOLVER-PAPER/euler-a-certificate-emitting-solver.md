@@ -14,15 +14,17 @@ Challenge, Equational Theories, Stage 2.*
 
 We describe EULER, a solver for the equational-implication problem over magmas
 posed by the SAIR Mathematics Distillation Challenge, Stage 2. Given two
-single-axiom identities `E1`, `E2` over one binary operation, EULER decides
-whether every magma satisfying `E1` satisfies `E2`, and emits a
+single-axiom identities `E1`, `E2` over one binary operation, EULER *attempts to
+decide* whether every magma satisfying `E1` satisfies `E2`, emitting a
 machine-checkable certificate — a finite countermodel for FALSE, a Lean 4 proof
-for TRUE — re-verified by the competition's open, deterministic judge. The
+for TRUE — for the instances it resolves, each re-verified by the competition's
+open, deterministic judge; it may also return an instance unresolved. The
 solver is organized as a *refusal stack*: direction is read from a precomputed
 public implication closure rather than guessed; no answer counts unless the
 judge accepts it, and the deterministic tiers additionally self-check before
 emitting; and no single proof method is trusted to cover the space. We report, with explicit verification badges, an exact
-direction agreement of 600/600 against the organizers' published answers, a
+direction agreement of 600/600 against the released evaluation sets' own answers
+(our frozen development corpus; provenance in the evidence pack), a
 held-out FALSE generalization of 120/120 (and 100/100 on novel hypotheses), and
 a released-set solve ceiling of 800/800 which we mark as a *ceiling* because it
 leans on pair-keyed certificates for released problems that the organizers state
@@ -165,9 +167,12 @@ write in a judge-free track.
 
 ## 4. Soundness
 
-**Theorem 4.1 (no unverified exit).** Every answer EULER submits has passed an
-independent validity check prior to submission, and is checked again by the
-judge.
+**Theorem 4.1 (no unverified *accepted* exit).** No answer counts unless the
+deterministic judge accepts it. Every *deterministic-tier* answer additionally
+passes an independent validity check before it is emitted; the grind and LLM
+tiers pass no prior check and reach the judge as unverified proposals, gated
+solely by its acceptance. Consequently no accepted answer is unverified: an
+accepted answer is one the judge itself certified.
 
 *Proof (structural, by cases on emit paths).* (i) FALSE emissions: the exhaustive
 finite evaluation of §2.1. (ii) Certificate-table entries: literal Lean bodies,
@@ -175,10 +180,12 @@ kernel-checked at creation on the judge's toolchain, re-checked by the judge.
 (iii) Chain proofs: each rewrite step re-walked before emission. (iv) Completion
 proofs: total emission (§3.2), a property of the emitter, established by audit
 rather than assumed. (v) Transitivity: `have`-chaining of hop proofs each of
-which is an (iii)/(iv) artifact. (vi) LLM candidates: no intrinsic check, hence
-reachable only behind the judge gate, which cannot finalize without `accepted`.
-In the Marathon track only paths (iii)–(v) may write. Inspection of the emit
-sites confirms the case analysis is exhaustive. ∎
+which is an (iii)/(iv) artifact. (vi) Grind and LLM candidates: no intrinsic
+check — these reach the judge as unverified proposals and can *finalize only*
+behind the judge gate, which cannot return without `accepted`; an unaccepted
+proposal never counts. In the Marathon track (no runtime judge) only the
+self-verifying paths (i)–(v) may write. Inspection of the emit sites confirms the
+case analysis is exhaustive. ∎
 
 *Remark.* Theorem 4.1 is an audited structural property of the program, not a
 machine-checked theorem about the program text; the judge's per-answer check is
@@ -275,10 +282,10 @@ badge.*
 
 | Claim | Value | Badge |
 |---|---|---|
-| Direction vs official answers, order-4 evaluation sets | **600 / 600** | Computationally verified |
+| Direction vs the released order-4 evaluation sets' own answers (frozen dev corpus; hashes in `evidence/held-out-cohorts/PROVENANCE.md`) | **600 / 600** | Computationally verified |
 | Held-out FALSE — pairs absent from every released set | **120 / 120** | Computationally verified |
 
-The held-out cohorts are reproducible: `HELD-OUT-COHORTS/reproduce_heldout.py` regenerates both (seeded, held out from every released set by construction) with an immutable result log; 0 invalid witnesses.
+The held-out cohorts are reproducible: `evidence/held-out-cohorts/reproduce_heldout.py` regenerates both (seeded, held out from every released set by construction) with an immutable result log; 0 invalid witnesses.
 | Held-out FALSE — novel hypotheses (never in any released set) | **100 / 100** | Computationally verified |
 | Released evaluation sets (4 × 200) | **800 / 800** | Ceiling |
 | Order-5 evaluation set (fully outside the oracle) | **190 / 200** organic | Computationally verified |
@@ -299,8 +306,13 @@ held-out FALSE evidence.
 
 The last attempted official run (2026-08-20) failed on the organizers'
 infrastructure error noted in §4; it is documented and reported, and counted as
-evidence in neither direction. One production judge run converts every ceiling in
-the table above to an official result.
+evidence in neither direction. A production judge run would produce a *new*
+official result on the set it is run against — a private-set score, or a
+re-run of a released set — and each answer it accepts carries the OFFICIAL badge.
+It does not retroactively convert the released-set 800/800 *ceiling* into an
+official figure: that number is a property of our frozen corpus and stays a
+ceiling. What an official run establishes is the generalizing performance, which
+is what the private set measures.
 
 ## 7. The field: two philosophies, one judge
 
@@ -312,8 +324,13 @@ mechanically proven before use — a genuinely sound design, hostage to a weak
 proxy model and blind on direction. EULER is the other school: it precomputes the
 mathematics — an exact direction oracle from public data, deterministic provers,
 disclosed certificates. Both are sound; both terminate at the same deterministic
-judge. The difference is reproducibility. EULER's every result can be regenerated
-*without any model in the loop*, from public materials, on a laptop. That is not
+judge. The difference is reproducibility. Every EULER certificate is
+independently *re-verifiable* — replayed through the open judge, on a laptop,
+*without any model in the loop*. The original *discovery* of some certificates
+did use dev-time systems that are named, not reproduced: 390 TRUE proofs came
+from Harmonic's Aristotle, and every embedded certificate was compile-checked by
+Axiom's Axle before shipping. The honest claim is therefore re-verifiability from
+public materials, not push-button re-derivation of the discovery path. That is not
 a competitive tactic. It is the companion paper's thesis — that a discipline
 losing the capacity to reactivate its deposits may retain every result while
 losing what made it knowledge — instantiated, with a live empirical contrast in
@@ -384,8 +401,11 @@ We state plainly what is not established. (1) No private-set performance figure 
 offered; the pair-keyed certificate layers are regression coverage only. (2) Two
 public FALSE pairs are unresolved — `1167 ⇒ 1763` (no finite countermodel through
 order 8) and `2531 ⇒ 4307` (orders 2–6 exhausted, order 7 terminated on budget);
-we do not claim no finite countermodel exists, and an implication refutable only
-by infinite magmas lies outside the competition's finite FALSE format. (3) The
+we do not claim no finite countermodel exists. The FALSE format permits an
+infinite carrier, but such a certificate needs a genuine Lean proof rather than
+the finite `decideFin!` table; these two pairs fall outside both our finite
+search and EULER's proof-supported infinite parity recognizer, not outside the
+format. (3) The
 runtime three-hop transitivity tier is strictly weaker than the dev-time search
 that motivated it — its forward frontier is drawn from the two-hop candidate list
 rather than all successors — recorded as a known limitation. (4) Theorem 4.1 is
