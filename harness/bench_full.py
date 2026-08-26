@@ -6,8 +6,10 @@ import importlib.util, json, os, pathlib, sys, time, random, itertools
 HARNESS = pathlib.Path(__file__).resolve().parent
 REPO = HARNESS.parent
 sys.setrecursionlimit(20000); sys.path.insert(0, str(HARNESS))
-from axle_judge import axle_true
+from axle_judge import axle_true, make_true_lean
 from mini_twee import parse_law
+
+CERTS = REPO / "certs"
 
 DST = os.environ.get("EULER_SOLVER", str(REPO / "EQT02-S00021-infra-failfast.py"))
 spec = importlib.util.spec_from_file_location("euler", DST)
@@ -49,12 +51,20 @@ def fake_judge(verdict, code):
         tac = code.split("def submission : Goal := by\n", 1)[1]
         body = "\n".join(ln[2:] if ln.startswith("  ") else ln for ln in tac.split("\n")).strip("\n")
         v, _ = axle_true(_cur["e1"], _cur["e2"], body)
+        if v and _cur.get("ids"):
+            CERTS.mkdir(exist_ok=True)
+            (CERTS / "{}__{}.lean".format(*_cur["ids"])).write_text(
+                make_true_lean(_cur["e1"], _cur["e2"], body))
         return {"status": "accepted" if v else "rejected"}
     else:
         st = _cur["false_stash"]
         if not st: return {"status": "rejected"}
         n, table = st
         ok = holds_forall(_cur["e1"], n, table) and fails_exists(_cur["e2"], n, table)
+        if ok and _cur.get("ids"):
+            CERTS.mkdir(exist_ok=True)
+            (CERTS / "{}__{}.countermodel.json".format(*_cur["ids"])).write_text(
+                json.dumps({"n": n, "table": table}))
         return {"status": "accepted" if ok else "rejected"}
 m.call_judge = fake_judge
 m.call_llm = lambda *a, **k: {}
@@ -69,6 +79,7 @@ print(f"{FSET}: sampling {len(sample)} (true+false)", flush=True)
 solved = wrong = 0; tcount = fcount = tsolved = fsolved = 0; t0 = time.time()
 for k, p in enumerate(sample):
     _cur["e1"] = m.normalise(p["equation1"]); _cur["e2"] = m.normalise(p["equation2"]); _cur["false_stash"] = None
+    _cur["ids"] = (p["eq1_id"], p["eq2_id"])
     ans = p.get("answer")
     if ans: tcount += 1
     else: fcount += 1
@@ -83,3 +94,6 @@ for k, p in enumerate(sample):
         print(f"  FAIL {'T' if ans else 'F'} {p['eq1_id']}=>{p['eq2_id']}: {res}", flush=True)
 print(f"\n==== EULER v8 FULL {FSET}: {solved}/{len(sample)} solved, {time.time()-t0:.0f}s ====", flush=True)
 print(f"TRUE: {tsolved}/{tcount}   FALSE: {fsolved}/{fcount}", flush=True)
+print(f"METRIC solve_rate={solved/max(len(sample),1):.4f}", flush=True)
+print(f"METRIC true_rate={tsolved/max(tcount,1):.4f}", flush=True)
+print(f"METRIC false_rate={fsolved/max(fcount,1):.4f}", flush=True)

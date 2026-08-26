@@ -30,7 +30,16 @@ python3 harness/bench_full.py hard1    # harder sets: hard1 / hard2 / hard3
 ```
 
 - Solver under test: `EQT02-S00021-infra-failfast.py` at the repo root, or set
-  `EULER_SOLVER=/path/to/candidate.py`.
+  `EULER_SOLVER=/path/to/candidate.py`. `bench_full.py` args:
+  `[problem_set] [sample_size] [budget_seconds]` (default `normal 50 60`).
+- **Metrics:** each bench ends with machine-readable lines —
+  `METRIC solve_rate=…`, `METRIC true_rate=…`, `METRIC false_rate=…`.
+  These are the numbers experiments are compared on; keep the format stable.
+- **Certificates survive only if committed.** Every judge-accepted result is
+  written to `certs/` at the repo root — self-contained `.lean` proofs for TRUE,
+  `.countermodel.json` for FALSE. Experiments should `git add certs/` so found
+  proofs persist in the experiment branch (the runner uploads logs only, not
+  files).
 - Problem sets are vendored in `harness/problems/` (from the SAIR Stage 2
   examples). TRUE claims verify via AXLE; FALSE claims verify by finite-model
   evaluation matching the judge's `decideFin!` semantics.
