@@ -1,0 +1,460 @@
+<title>EULER — A Solver That Shows Its Work</title>
+<style>
+  :root{
+    --ink:#17130c; --vellum:#e9e3d5; --paper:#f0ebde;
+    --gold:#c69a3f; --gold-deep:#a87f2b;
+    --emerald:#2f7d5b; --sky:#3b7ea1; --amber:#c08a2e; --slate:#726c60;
+    /* tokens */
+    --bg:var(--paper); --fg:var(--ink);
+    --muted:#6d6656; --rule:#cfc7b4; --card:#e6dfcf; --card-edge:#d6cdb8;
+    --accent:var(--gold-deep);
+    --serif:Georgia,"Iowan Old Style","Times New Roman",serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,"Cascadia Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{ --bg:#17130c; --fg:#ece5d4; --muted:#9a917d; --rule:#3a3324;
+      --card:#211b11; --card-edge:#332b1b; --accent:var(--gold); }
+  }
+  :root[data-theme="light"]{ --bg:#f0ebde; --fg:#17130c; --muted:#6d6656; --rule:#cfc7b4; --card:#e6dfcf; --card-edge:#d6cdb8; --accent:var(--gold-deep); }
+  :root[data-theme="dark"]{ --bg:#17130c; --fg:#ece5d4; --muted:#9a917d; --rule:#3a3324; --card:#211b11; --card-edge:#332b1b; --accent:var(--gold); }
+
+  *{box-sizing:border-box}
+  html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);
+    line-height:1.5;-webkit-font-smoothing:antialiased}
+  .deck{width:100%}
+  .slide{min-height:100vh;scroll-snap-align:start;display:flex;flex-direction:column;
+    justify-content:center;padding:clamp(1.5rem,5vw,5rem);position:relative;
+    border-bottom:1px solid var(--rule)}
+  .wrap{max-width:60rem;margin:0 auto;width:100%}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 1.4rem}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4.6rem);
+    line-height:1.04;letter-spacing:-.01em;text-wrap:balance;margin:0 0 1.2rem}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4vw,3rem);
+    line-height:1.1;text-wrap:balance;margin:0 0 1.4rem}
+  h3{font-family:var(--serif);font-weight:400;font-size:1.35rem;margin:0 0 .5rem}
+  p{max-width:34em;margin:0 0 1rem}
+  .lede{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--fg)}
+  .muted{color:var(--muted)}
+  .mono{font-family:var(--mono)}
+  .diamond{color:var(--accent)}
+  em{font-style:italic}
+  strong{font-weight:600}
+
+  .snum{position:absolute;top:clamp(1.2rem,3vw,2.4rem);right:clamp(1.2rem,3vw,2.4rem);
+    font-family:var(--mono);font-size:.72rem;color:var(--muted);letter-spacing:.1em}
+  .progress{position:fixed;left:0;top:0;height:2px;background:var(--accent);width:0;
+    z-index:50;transition:width .15s ease}
+  .toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:50;font-family:var(--mono);
+    font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    background:var(--card);border:1px solid var(--card-edge);border-radius:2px;
+    padding:.5rem .7rem;cursor:pointer}
+  .toggle:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .hint{position:fixed;bottom:1.1rem;left:1.1rem;z-index:40;font-family:var(--mono);
+    font-size:.66rem;color:var(--muted);letter-spacing:.08em}
+
+  /* badges — semantic, reserved */
+  .badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:.4rem 0 0}
+  .badge{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:.28rem .55rem;border-radius:2px;border:1px solid;white-space:nowrap}
+  .b-emerald{color:var(--emerald);border-color:color-mix(in oklab,var(--emerald),transparent 55%);
+    background:color-mix(in oklab,var(--emerald),transparent 90%)}
+  .b-sky{color:var(--sky);border-color:color-mix(in oklab,var(--sky),transparent 55%);
+    background:color-mix(in oklab,var(--sky),transparent 90%)}
+  .b-amber{color:var(--amber);border-color:color-mix(in oklab,var(--amber),transparent 55%);
+    background:color-mix(in oklab,var(--amber),transparent 90%)}
+  .b-slate{color:var(--slate);border-color:color-mix(in oklab,var(--slate),transparent 55%);
+    background:color-mix(in oklab,var(--slate),transparent 88%)}
+
+  .num-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.4rem;margin-top:1rem}
+  .num{border-top:2px solid var(--accent);padding-top:.9rem}
+  .num .fig{font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.4rem);line-height:1;
+    font-variant-numeric:tabular-nums}
+  .num .lab{font-size:.9rem;color:var(--muted);margin:.5rem 0 .6rem;max-width:22em}
+
+  .steps{display:flex;flex-direction:column;gap:.1rem;font-family:var(--mono);font-size:.82rem}
+  .step{display:flex;gap:.9rem;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+  .step .k{color:var(--accent);white-space:nowrap;min-width:8.5rem}
+  .step .v{color:var(--fg)}
+
+  pre{font-family:var(--mono);font-size:clamp(.72rem,1.4vw,.86rem);line-height:1.55;
+    background:var(--card);border:1px solid var(--card-edge);border-left:2px solid var(--accent);
+    padding:1rem 1.1rem;border-radius:2px;overflow-x:auto;margin:0 0 1rem}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem;align-items:start}
+  @media (max-width:760px){.two{grid-template-columns:1fr}}
+  .col h3{color:var(--accent)}
+  .rule{height:1px;background:var(--rule);border:0;margin:1.4rem 0}
+  .kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  canvas{width:100%;height:min(52vh,420px);display:block;border:1px solid var(--card-edge);
+    border-radius:2px;background:var(--card)}
+  .cap{font-size:.9rem;color:var(--muted);margin-top:.7rem;max-width:40em}
+  .btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--bg);background:var(--accent);border:0;border-radius:2px;padding:.55rem .9rem;
+    cursor:pointer;margin-top:.9rem}
+  .btn:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+
+  ul.clean{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.7rem}
+  ul.clean li{padding-left:1.2rem;position:relative;max-width:38em}
+  ul.clean li::before{content:"◇";position:absolute;left:0;color:var(--accent);font-size:.8em;top:.15em}
+  a{color:var(--accent);text-underline-offset:3px}
+  .ack{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+  @media (max-width:760px){.ack{grid-template-columns:1fr}}
+  .ack .card{background:var(--card);border:1px solid var(--card-edge);border-radius:3px;padding:1.2rem 1.3rem}
+  .ack h3{color:var(--accent)}
+  .ack p{font-size:.92rem;margin:0}
+</style>
+
+<div class="progress" id="prog"></div>
+<button class="toggle" id="toggle" aria-label="Toggle light and dark theme">Theme</button>
+<div class="hint" aria-hidden="true">↑ ↓ / space</div>
+
+<main class="deck">
+
+  <!-- 1 · TITLE -->
+  <section class="slide" id="s1">
+    <span class="snum">01 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Riemann Labs · SAIR Stage 2 · Equational Theories</p>
+      <h1>A solver that <em>shows its work</em>.</h1>
+      <p class="lede">EULER decides whether one magma law forces another, and answers only
+        in machine-checkable Lean — re-verified by the competition's open, deterministic judge.
+        It ships inside the first competition entry packaged to the standard of its own
+        accompanying paper.</p>
+      <p class="kicker">The paper proposes the standard. The submission instantiates it.</p>
+    </div>
+  </section>
+
+  <!-- 2 · THE PROBLEM -->
+  <section class="slide" id="s2">
+    <span class="snum">02 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">The problem</p>
+      <h2>A magma is the most lawless object in algebra.</h2>
+      <p>A set, one binary operation <span class="mono diamond">◇</span>, no axioms. An
+        equational law is a universally quantified identity. Given two laws, decide:</p>
+      <pre>does every magma satisfying   E1   also satisfy   E2 ?</pre>
+      <p>Not usually. Not on the worlds we checked. <em>Every</em> magma — including ones no
+        person will think of. <strong>FALSE</strong> needs a finite counterexample table;
+        <strong>TRUE</strong> needs a Lean proof. No partial credit. The judge's verdict is the
+        only score.</p>
+    </div>
+  </section>
+
+  <!-- 3 · THE STAKES -->
+  <section class="slide" id="s3">
+    <span class="snum">03 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Why it matters</p>
+      <h2>Correct, checked — and not yet knowledge.</h2>
+      <p class="lede">Machines now write proofs no human has read. Terence Tao's criterion:
+        <em>a proof that no human can properly explain should be viewed as incomplete — even
+        when a computer has formally verified it.</em></p>
+      <p>This setting makes verification free and perfect, and thereby moves all the interest to
+        the questions verification cannot answer. That is exactly where the accompanying paper —
+        <em>Mathematics in the Age of Mechanical Reproduction</em> — argues the epistemics now
+        live. EULER is one small system built under that criterion, on purpose.</p>
+    </div>
+  </section>
+
+  <!-- 4 · THE NUMBERS -->
+  <section class="slide" id="s4">
+    <span class="snum">04 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">The evidence, each figure with its status</p>
+      <h2>Honesty is the design.</h2>
+      <div class="num-grid">
+        <div class="num">
+          <div class="fig">600 / 600</div>
+          <div class="lab">Direction vs SAIR's published answers, order-4 sets.</div>
+          <div class="badges"><span class="badge b-sky">Computationally verified</span></div>
+        </div>
+        <div class="num">
+          <div class="fig">800 / 800</div>
+          <div class="lab">Released-set solve ceiling — leans on pair-keyed certificates for
+            released rows. Not a private-set claim. Not an official-judge result.</div>
+          <div class="badges"><span class="badge b-amber">Ceiling</span></div>
+        </div>
+        <div class="num">
+          <div class="fig">120·100</div>
+          <div class="lab">Held-out FALSE: pairs, then hypotheses, absent from every released set.</div>
+          <div class="badges"><span class="badge b-sky">Computationally verified</span></div>
+        </div>
+        <div class="num">
+          <div class="fig">50 / 50</div>
+          <div class="lab">Held-out TRUE: unseen pairs, solved by the generalizing tiers alone
+            (0 embedded certs) — and a frontier prover proves the same 50/50. Both Axle-checked
+            on the judge's Lean 4.32.2.</div>
+          <div class="badges"><span class="badge b-emerald">Verified · judge toolchain</span></div>
+        </div>
+      </div>
+      <hr class="rule">
+      <p class="muted">No artifact yet carries the <span class="badge b-slate">Official</span>
+        badge — that needs an organizer judge run, which measures the private set. It does not
+        retroactively turn the released-set <span class="badge b-amber">Ceiling</span> into an
+        official figure. That distinction sits under every number, everywhere.</p>
+    </div>
+  </section>
+
+  <!-- 5 · ARCHITECTURE -->
+  <section class="slide" id="s5">
+    <span class="snum">05 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Architecture · a refusal stack</p>
+      <h2>Look things up. Don't trust cleverness. Don't stop at one method.</h2>
+      <div class="steps" role="list">
+        <div class="step" role="listitem"><span class="k">oracle</span><span class="v">the published implication closure — direction, exact, no guessing</span></div>
+        <div class="step" role="listitem"><span class="k">FALSE</span><span class="v">305-magma bank keyed by hypothesis → stdlib model search → full finite self-check</span></div>
+        <div class="step" role="listitem"><span class="k">TRUE · chain</span><span class="v">bidirectional rewrite, self-rechecked before it emits</span></div>
+        <div class="step" role="listitem"><span class="k">TRUE · complete</span><span class="v">Knuth–Bendix — total emission: if it emits, the Lean is valid</span></div>
+        <div class="step" role="listitem"><span class="k">TRUE · compose</span><span class="v">transitivity through provable intermediates; then replay an ATP's own proof</span></div>
+        <div class="step" role="listitem"><span class="k">judge</span><span class="v">the final authority — every Solo answer, no exceptions</span></div>
+      </div>
+      <p class="cap">No answer counts unless the judge accepts it. The deterministic tiers
+        self-check before emitting; the grind and model tiers are unchecked guesses gated
+        only by the judge. No code path leads from a heuristic guess to a judge-accepted answer.</p>
+    </div>
+  </section>
+
+  <!-- 6 · THE COLLAPSE (signature) -->
+  <section class="slide" id="s6">
+    <span class="snum">06 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Where search ends and seeing begins</p>
+      <h2>Watch a world collapse.</h2>
+      <canvas id="collapse" aria-label="Animation of scattered points collapsing to a single point"></canvas>
+      <button class="btn" id="collapseBtn">Apply Rule A</button>
+      <p class="cap"><span class="mono">h : ∀ x y z, x = (y ◇ x) ◇ ((x ◇ z) ◇ z)</span> — law 1689.
+        Completion derives <span class="mono">L10 : a = a ◇ b</span>. The machine held the lever
+        and could not finish: rewriting cannot say <em>“all elements are equal.”</em> A human saw
+        what kind of statement the goal was, and closed it in three lines. The kernel checked both,
+        and cared for neither who wrote what.</p>
+    </div>
+  </section>
+
+  <!-- 7 · HONESTY -->
+  <section class="slide" id="s7">
+    <span class="snum">07 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">The honesty budget</p>
+      <h2>What generalizes, and what is only a ceiling.</h2>
+      <div class="two">
+        <div class="col">
+          <h3>Named, not hidden</h3>
+          <ul class="clean">
+            <li>The released-set sweep leans on pair-keyed certificates — disclosed per pair, never counted as generalization.</li>
+            <li>The FALSE bank's harvest targeted the released sets; the held-out numbers are the claim of record.</li>
+            <li>The two long-unresolved public FALSE pairs are now <em>closed</em> — an infinite ℤ model and a finite order-13 model, built by Aristotle and verified on the judge's Lean 4.32.2. One is provably infinite-only; the other just sat above our search bound.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Three fidelity failures, on the record</h3>
+          <p>A goal-binding mismatch that <em>accepted</em> proofs the judge rejected; an operator
+            glyph (<span class="mono">*</span> vs <span class="mono diamond">◇</span>) that
+            <em>rejected</em> five correct proofs; and — caught in a third adversarial audit — a
+            sibling solver whose FALSE certificates were sound tables but omitted three Lean
+            <span class="mono">import</span>s, so every one would have failed to compile. Each time
+            the checker was flawless; what failed was fidelity between what we emitted and what we
+            meant. No verifier guards that gap. It deserves the daylight — and a compile on the
+            judge's own toolchain now catches it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · THE FIELD -->
+  <section class="slide" id="s8">
+    <span class="snum">08 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">The field · two philosophies, one judge</p>
+      <h2>Creativity gated by verification, or mathematics precomputed.</h2>
+      <div class="two">
+        <div class="col">
+          <h3>The other school</h3>
+          <p>A language model steers mechanically-verified tools — creative lemma bridges, treated
+            as untrusted hints and proven before use. Genuinely sound. Hostage to a weak proxy
+            model, and blind on direction.</p>
+        </div>
+        <div class="col">
+          <h3>Ours</h3>
+          <p>An exact direction oracle from public data, deterministic provers, disclosed
+            certificates. Both end at the same deterministic judge. The difference is
+            reproducibility: EULER's every result regenerates <em>without any model in the
+            loop</em>, from public materials, on a laptop.</p>
+        </div>
+      </div>
+      <p class="cap">That is not a competitive tactic. It is the paper's thesis, instantiated —
+        with a live empirical contrast in the same competition.</p>
+    </div>
+  </section>
+
+  <!-- 9 · SHOULDERS -->
+  <section class="slide" id="s9">
+    <span class="snum">09 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Standing on shoulders · attribution is part of the epistemics</p>
+      <h2>Two systems this work would look different without.</h2>
+      <div class="ack">
+        <div class="card">
+          <h3>Axle — Axiom</h3>
+          <p>Built by Carina Hong and the Axiom Math team. The dev-time verification backbone:
+            judge-exact Lean compile checks in about two seconds instead of a forty-minute round
+            trip. Every certificate passed through it — and both fidelity failures were
+            <em>discovered</em> as Axle divergences.</p>
+        </div>
+        <div class="card">
+          <h3>Aristotle — Harmonic</h3>
+          <p>Harmonic's Lean theorem prover proved 390 of the solver's hard TRUE implications
+            (traced to dated May-2026 jobs), embedded and disclosed, re-verified by the judge —
+            a dev-time contributor, never called at runtime. As an independent upper bound it also
+            proved the same 50/50 held-out TRUE as EULER's runtime, and constructed the two
+            countermodels that closed the last FALSE holes.</p>
+        </div>
+      </div>
+      <p class="cap">With the Equational Theories Project (Tao et al.), and the classical stack —
+        Knuth–Bendix, Twee, Mace4, E, Vampire. None a runtime dependency; all shaped what the
+        runtime carries.</p>
+    </div>
+  </section>
+
+  <!-- 10 · FOUR TELLINGS -->
+  <section class="slide" id="s10">
+    <span class="snum">10 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Reactivation, tested</p>
+      <h2>One result, told at four altitudes.</h2>
+      <p>Thurston: reactivation is not a property of a text but a relation between text and reader.
+        The paper makes it a test — <em>translation</em>. The same pivotal proof appears in every
+        telling, at four depths; climb, and it comes into focus rather than changes.</p>
+      <div class="steps">
+        <div class="step"><span class="k">I · Anyone</span><span class="v">the ◇ game, the bossy rule, a world that collapses to a point</span></div>
+        <div class="step"><span class="k">II · Curious</span><span class="v">Husserl 1936, three refusals, the collapse with L10 in view</span></div>
+        <div class="step"><span class="k">III · Practitioner</span><span class="v">the full refusal stack, measured, with its inflation risks named</span></div>
+        <div class="step"><span class="k">IV · Formal</span><span class="v">definitions, the subsingleton theorem, the verbatim kernel-checked Lean</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · STATUS -->
+  <section class="slide" id="s11">
+    <span class="snum">11 · 12</span>
+    <div class="wrap">
+      <p class="eyebrow">Status · one gate remains</p>
+      <h2>Everything convertible, in one production run.</h2>
+      <div class="steps">
+        <div class="step"><span class="k">2026-05-01</span><span class="v">Stage 2 opens (prereg Apr 23; closes Aug 31) — competed, disclosed as interested party</span></div>
+        <div class="step"><span class="k">2026-08-25</span><span class="v">released residue closed — 800/800 ceiling; contribution pack + WILL assembled</span></div>
+        <div class="step"><span class="k">2026-08-26</span><span class="v">WILL FALSE-import blocker fixed; four gates cleared (FALSE certs compiled on the judge's Lean 4.32.2); eval sets shown byte-identical to the official release; Aristotle proofs traced to dated jobs; both FALSE holes closed</span></div>
+        <div class="step"><span class="k">2026-08-31</span><span class="v">Stage 2 deadline · the one remaining gate: a fresh official judge run</span></div>
+      </div>
+      <p class="cap mono">Solvers of record — EULER 442,061 bytes · SHA-256 e0f7ac84…48329;
+        WILL 91,230 bytes · SHA-256 90aa400c…39468. Each one file, both tracks; WILL is oracle-free.</p>
+    </div>
+  </section>
+
+  <!-- 12 · CLOSE -->
+  <section class="slide" id="s12">
+    <span class="snum">12 · 12</span>
+    <div class="wrap">
+      <h1>Machines search. People see. The judge disposes.</h1>
+      <p class="lede">Each doing the thing the others cannot — with a verifier that checks everyone,
+        and no one, human or machine, ever getting to say <em>trust me</em>.</p>
+      <p class="kicker">Every claim here is auditable from public materials: the ETP data, the SAIR
+        open judge, the contribution pack. If any is wrong, it should be provable from those alone.</p>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  // progress + slide number sync
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    prog.style.width=(max>0?(h.scrollTop/max*100):0)+'%';
+  }
+  document.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  // keyboard nav between slides
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  function current(){
+    var y=window.scrollY+window.innerHeight*0.5, idx=0;
+    for(var i=0;i<slides.length;i++){ if(slides[i].offsetTop<=y) idx=i; }
+    return idx;
+  }
+  function go(d){
+    var i=Math.max(0,Math.min(slides.length-1,current()+d));
+    slides[i].scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(1);}
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();go(-1);}
+    else if(e.key==='Home'){e.preventDefault();slides[0].scrollIntoView();}
+    else if(e.key==='End'){e.preventDefault();slides[slides.length-1].scrollIntoView();}
+  });
+
+  // theme toggle
+  var root=document.documentElement, tg=document.getElementById('toggle');
+  tg.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    if(!cur){ cur=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'; }
+    root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+  });
+
+  // collapse canvas
+  var cv=document.getElementById('collapse'), ctx=cv.getContext('2d');
+  var pts=[], DPR=Math.min(2,window.devicePixelRatio||1), W,H,anim=null,t=0,collapsing=false;
+  function size(){ W=cv.clientWidth; H=cv.clientHeight; cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+  function reset(){
+    pts=[]; for(var i=0;i<150;i++){ pts.push({
+      x:Math.random()*W, y:Math.random()*H,
+      hx:Math.random()*W, hy:Math.random()*H,
+      ph:Math.random()*6.28 }); }
+    collapsing=false; t=0;
+  }
+  function accent(){ return getComputedStyle(root).getPropertyValue('--accent').trim()||'#c69a3f'; }
+  function ink(){ return getComputedStyle(root).getPropertyValue('--muted').trim()||'#888'; }
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function frame(){
+    ctx.clearRect(0,0,W,H); t+=0.016;
+    var cx=W/2, cy=H/2, a=accent(), m=ink();
+    var k=collapsing?Math.min(1,(t)/2.4):0; k=k*k*(3-2*k); // smoothstep
+    for(var i=0;i<pts.length;i++){ var p=pts[i];
+      var bx=p.hx+Math.sin(t*0.6+p.ph)*6, by=p.hy+Math.cos(t*0.5+p.ph)*6;
+      var x=bx+(cx-bx)*k, y=by+(cy-by)*k;
+      ctx.beginPath(); ctx.arc(x,y,collapsing?1.6:1.9,0,6.2832);
+      ctx.fillStyle=m; ctx.globalAlpha=collapsing?(1-k*0.7):0.75; ctx.fill();
+    }
+    ctx.globalAlpha=1;
+    if(collapsing && k>0.55){
+      var pulse=0.5+0.5*Math.sin(t*4);
+      ctx.beginPath(); ctx.arc(cx,cy,4+pulse*3,0,6.2832);
+      ctx.fillStyle=a; ctx.fill();
+      ctx.globalAlpha=0.3*pulse; ctx.beginPath(); ctx.arc(cx,cy,14+pulse*10,0,6.2832);
+      ctx.strokeStyle=a; ctx.lineWidth=1.2; ctx.stroke(); ctx.globalAlpha=1;
+    }
+    anim=requestAnimationFrame(frame);
+  }
+  function start(){ size(); reset(); if(anim)cancelAnimationFrame(anim); if(!reduce) frame(); else drawStatic(); }
+  function drawStatic(){ ctx.clearRect(0,0,W,H); var m=ink();
+    for(var i=0;i<pts.length;i++){ ctx.beginPath(); ctx.arc(pts[i].hx,pts[i].hy,1.9,0,6.28); ctx.fillStyle=m; ctx.globalAlpha=.7; ctx.fill(); } ctx.globalAlpha=1; }
+  document.getElementById('collapseBtn').addEventListener('click',function(){
+    if(reduce){ // static: just draw single point
+      ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.arc(W/2,H/2,6,0,6.28); ctx.fillStyle=accent(); ctx.fill();
+      this.textContent='One point left · replay'; var b=this;
+      setTimeout(function(){ drawStatic(); b.textContent='Apply Rule A'; },1200); return;
+    }
+    if(!collapsing){ collapsing=true; t=0; this.textContent='One point left · replay'; }
+    else { reset(); this.textContent='Apply Rule A'; }
+  });
+  // lazy-init when slide visible
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ start(); } }); },{threshold:.25});
+  io.observe(document.getElementById('s6'));
+  window.addEventListener('resize',function(){ size(); if(reduce)drawStatic(); });
+})();
+</script>

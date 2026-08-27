@@ -1,0 +1,33 @@
+{
+  "campaign": "Aristotle (Harmonic) \u2014 SAIR EULER support, submitted 2026-08-26",
+  "task_A_heldout_true_upper_bound": {
+    "cohort": "50 held-out TRUE (excluded all 800 released pairs), seed 20260826",
+    "aristotle_proved": "50/50",
+    "euler_runtime_generalizing_tiers": "50/50 (0 embedded certs, all Axle-verified)",
+    "finding": "EULER's runtime composition MATCHES the frontier prover on held-out TRUE generalization.",
+    "file": "heldout-true-aristotle.lean"
+  },
+  "task_B_false_holes": {
+    "status": "BOTH CLOSED \u2014 judge-toolchain (Lean 4.32.2) verified via Axle",
+    "hole_1167_1763": {
+      "countermodel": "infinite magma on \u2124, x\u25c7w = -w if 0\u2264x else 1-w",
+      "note": "Aristotle proved the countermodel MUST be infinite (finite eq1167-magmas force eq1763).",
+      "result": "proved"
+    },
+    "hole_2531_4307": {
+      "countermodel": "finite magma on ZMod 13, x\u25c7y = 7x+7y (order 13)",
+      "note": "A FINITE countermodel exists at order 13 \u2014 EULER's search capped below 13; not infinite-only.",
+      "result": "proved"
+    },
+    "file": "false-hole-countermodels.lean",
+    "axle_4_32_2_verified": true
+  },
+  "task_C_will_unsolved": {
+    "status": "COMPLETE \u2014 Axle Lean 4.32.2 verified",
+    "will_mechanical_on_50_TRUE": "34/50 (technique-only, no LLM/oracle)",
+    "aristotle_on_the_16_WILL_missed": "16/16 proved",
+    "axle_4_32_2_verified": true,
+    "finding": "Every TRUE that WILL's distilled technique could not reach IS provable by a frontier prover. The 34\u219250 gap is exactly the 'sediment' \u2014 deep proofs beyond re-derivable technique. Combined frontier ceiling on the 50-TRUE sample: 50/50 (34 WILL + 16 Aristotle).",
+    "file": "will-unsolved-aristotle.lean"
+  }
+}

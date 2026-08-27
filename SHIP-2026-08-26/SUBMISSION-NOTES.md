@@ -78,8 +78,11 @@ The 800/800 released-set solve figure is a *ceiling* built partly from the
 exact-row certificates above — it is **not** a private-set claim and **not** an
 official-judge result. The figure that generalizes is held-out and reproducible (`evidence/held-out-cohorts/`,
 seeded cohorts held out from every released set by construction): FALSE 120/120
-on pairs, 100/100 on hypotheses absent from every released set. No result carries
-an official-judge badge until this run returns.
+on pairs, 100/100 on hypotheses absent from every released set. On the scored
+**Order-5** category (outside the order-4 direction oracle) EULER reaches 190/200
+by computation — FALSE order-agnostic (100/100), TRUE 90/100 via the search
+tiers — a measured, not asserted, figure. No result carries an official-judge
+badge until this run returns.
 
 ---
 
@@ -115,10 +118,15 @@ verdicts). There is no compressed data blob to disclose.
 
 ### Honest scope (paste)
 
-Mechanical-tier bench, no LLM and no oracle, 100 released problems: FALSE 50/50
-(independently re-checked), TRUE 33/50 (chain + collapse). The LLM tier operates
-only inside the competition sandbox and is unmeasured here. Sample is released,
-not private. No official-judge badge until this run returns.
+Mechanical-tier bench, no LLM and no oracle, 100 released problems (50 FALSE /
+50 TRUE): FALSE 50/50 (independently re-checked as sound finite countermodels),
+TRUE 34/50 (chain + collapse). Every FALSE certificate is emitted as **compiling
+Lean** in the judge's exact format (`finOpTable` + `decideFin!`) — not a raw
+table — and this was confirmed on the judge's own Lean v4.32.2: 15/15 constructed
++ 6/6 real released FALSE certs verified, with 2/2 deliberately-broken certs
+correctly rejected (`evidence/will-bench/`). The LLM tier operates only inside the
+competition sandbox and is unmeasured here. Sample is released, not private. No
+official-judge badge until this run returns.
 
 ---
 
