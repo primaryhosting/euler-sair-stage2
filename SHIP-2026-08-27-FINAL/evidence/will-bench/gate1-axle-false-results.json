@@ -1,0 +1,92 @@
+[
+ {
+  "id": "wf00",
+  "pair": "comm |= left-proj",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf01",
+  "pair": "comm |= right-proj",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf02",
+  "pair": "comm |= idempotent",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf03",
+  "pair": "idempotent |= comm",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf04",
+  "pair": "assoc |= comm",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf05",
+  "pair": "left-proj |= comm",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf06",
+  "pair": "left-proj |= right-proj",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf07",
+  "pair": "comm |= assoc-collapse",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf08",
+  "pair": "idempotent |= left-proj",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf09",
+  "pair": "comm |= x=xx",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf10",
+  "pair": "assoc |= idempotent",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf11",
+  "pair": "right-proj |= left-proj",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf12",
+  "pair": "comm |= right-collapse",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf13",
+  "pair": "left-proj |= idempotent",
+  "verified": true,
+  "err": ""
+ },
+ {
+  "id": "wf14",
+  "pair": "comm |= const",
+  "verified": true,
+  "err": ""
+ }
+]

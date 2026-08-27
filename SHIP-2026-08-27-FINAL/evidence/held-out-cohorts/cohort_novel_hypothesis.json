@@ -1,0 +1,612 @@
+{
+ "seed": 999,
+ "target": 100,
+ "novel_hypothesis": true,
+ "excluded_released_pairs": 800,
+ "excluded_released_hyps": 497,
+ "size": 100,
+ "solved": 100,
+ "invalid_witnesses": 0,
+ "results": [
+  {
+   "eq1_id": 656,
+   "eq2_id": 4652,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4373,
+   "eq2_id": 4019,
+   "solved": true,
+   "order": 3
+  },
+  {
+   "eq1_id": 3960,
+   "eq2_id": 1082,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 436,
+   "eq2_id": 2079,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3261,
+   "eq2_id": 1858,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3296,
+   "eq2_id": 614,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1640,
+   "eq2_id": 4099,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2710,
+   "eq2_id": 1351,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 709,
+   "eq2_id": 4521,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3820,
+   "eq2_id": 3016,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1063,
+   "eq2_id": 4094,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3809,
+   "eq2_id": 121,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 452,
+   "eq2_id": 1991,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3310,
+   "eq2_id": 2246,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4109,
+   "eq2_id": 2921,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 347,
+   "eq2_id": 1347,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3717,
+   "eq2_id": 894,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3493,
+   "eq2_id": 4533,
+   "solved": true,
+   "order": 3
+  },
+  {
+   "eq1_id": 1866,
+   "eq2_id": 837,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2014,
+   "eq2_id": 3844,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4656,
+   "eq2_id": 775,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3113,
+   "eq2_id": 4293,
+   "solved": true,
+   "order": 5
+  },
+  {
+   "eq1_id": 2541,
+   "eq2_id": 4041,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 419,
+   "eq2_id": 3832,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 369,
+   "eq2_id": 424,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3760,
+   "eq2_id": 827,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 643,
+   "eq2_id": 818,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2567,
+   "eq2_id": 1164,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3558,
+   "eq2_id": 3315,
+   "solved": true,
+   "order": 5
+  },
+  {
+   "eq1_id": 4406,
+   "eq2_id": 324,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4339,
+   "eq2_id": 873,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2511,
+   "eq2_id": 3705,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 400,
+   "eq2_id": 1151,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4016,
+   "eq2_id": 2277,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1845,
+   "eq2_id": 2889,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4006,
+   "eq2_id": 4340,
+   "solved": true,
+   "order": 3
+  },
+  {
+   "eq1_id": 4105,
+   "eq2_id": 2834,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 410,
+   "eq2_id": 1771,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3650,
+   "eq2_id": 2310,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2900,
+   "eq2_id": 1983,
+   "solved": true,
+   "order": 5
+  },
+  {
+   "eq1_id": 65,
+   "eq2_id": 4410,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 326,
+   "eq2_id": 2873,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3275,
+   "eq2_id": 4662,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 872,
+   "eq2_id": 2756,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3076,
+   "eq2_id": 3213,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2178,
+   "eq2_id": 3266,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 401,
+   "eq2_id": 2005,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4680,
+   "eq2_id": 3272,
+   "solved": true,
+   "order": 3
+  },
+  {
+   "eq1_id": 2402,
+   "eq2_id": 4179,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1387,
+   "eq2_id": 2815,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 31,
+   "eq2_id": 3168,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2261,
+   "eq2_id": 3841,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3466,
+   "eq2_id": 3494,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1301,
+   "eq2_id": 414,
+   "solved": true,
+   "order": 5
+  },
+  {
+   "eq1_id": 3549,
+   "eq2_id": 979,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4481,
+   "eq2_id": 2158,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2947,
+   "eq2_id": 3634,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4204,
+   "eq2_id": 206,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4383,
+   "eq2_id": 3506,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2266,
+   "eq2_id": 4256,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2960,
+   "eq2_id": 3450,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4042,
+   "eq2_id": 675,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1931,
+   "eq2_id": 1796,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2101,
+   "eq2_id": 3184,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4148,
+   "eq2_id": 2420,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3461,
+   "eq2_id": 4269,
+   "solved": true,
+   "order": 3
+  },
+  {
+   "eq1_id": 4091,
+   "eq2_id": 596,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 853,
+   "eq2_id": 2500,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4543,
+   "eq2_id": 3345,
+   "solved": true,
+   "order": 3
+  },
+  {
+   "eq1_id": 34,
+   "eq2_id": 2463,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2385,
+   "eq2_id": 3889,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1640,
+   "eq2_id": 3779,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1051,
+   "eq2_id": 2022,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1718,
+   "eq2_id": 4019,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1784,
+   "eq2_id": 635,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3098,
+   "eq2_id": 2026,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1633,
+   "eq2_id": 2310,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2398,
+   "eq2_id": 1819,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3556,
+   "eq2_id": 3594,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4220,
+   "eq2_id": 3037,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4220,
+   "eq2_id": 111,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3658,
+   "eq2_id": 2915,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 841,
+   "eq2_id": 4056,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1262,
+   "eq2_id": 2729,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3310,
+   "eq2_id": 4567,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 626,
+   "eq2_id": 3023,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1059,
+   "eq2_id": 1962,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4188,
+   "eq2_id": 919,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2478,
+   "eq2_id": 4082,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3892,
+   "eq2_id": 1634,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4199,
+   "eq2_id": 855,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2654,
+   "eq2_id": 2097,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3818,
+   "eq2_id": 1554,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2540,
+   "eq2_id": 2564,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 4389,
+   "eq2_id": 4578,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 255,
+   "eq2_id": 4641,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 3599,
+   "eq2_id": 1028,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 1966,
+   "eq2_id": 2102,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 2856,
+   "eq2_id": 4301,
+   "solved": true,
+   "order": 2
+  },
+  {
+   "eq1_id": 843,
+   "eq2_id": 3983,
+   "solved": true,
+   "order": 2
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+== core ==
+PASS  parse/normalise variables
+PASS  evaluator: left projection satisfies x◇y=x
+PASS  evaluator: left projection violates x◇y=y
+PASS  exhaustive tier finds comm-not-assoc witness
+PASS  no witness for a TRUE implication
+PASS  backtracking search finds order-4 witness
+PASS  self_check_false rejects invalid witness
+PASS  core_check_equation on Z2 addition (associative)
+SELFTEST PASS
+== provers ==
+PASS T1 chain + congrArg
+PASS T2 fresh-var ALLEQ
+PASS T3 1689=>2391 collapse
+PASS T4 honest None
+SELFTEST PASS
+== shell ==
+PASS normalise
+PASS check_eq comm on XOR
+PASS check_eq proj fails on XOR
+PASS builtin CE search finds table
+PASS lean_false shape
+PASS CE independently re-checked
+PASS trivial true: alpha-identical -> exact h
+PASS trivial true: reflexive -> rfl
+PASS lean_true shape
+PASS llm parse: fenced json
+PASS llm parse: bare table salvage
+PASS llm parse: bare tactic salvage
+PASS llm parse: garbage -> None
+PASS banned token screen
+PASS infra: olean mismatch
+PASS infra: judge code
+PASS infra: plain reject not infra
+PASS marathon writes only self-verified answers
+PASS analysis: idempotence detected
+PASS analysis: variable counts
+SELFTEST PASS
+== will ==
+PASS will parse: verdict-false dialect
+PASS will parse: verdict-true dialect + lemma
+PASS prompt fragment: "check"
+PASS prompt fragment: scan your finished proof for any *
+PASS prompt fragment: fully parenthesize
+PASS prompt fragment: ALLEQ
+PASS prompt fragment: {problem.equation1}
+PASS prompt fragment: {problem.equation2}
+PASS prompt fragment: {solver.analysis}
+PASS prompt fragment: {solver.feedback}
+PASS prompt: check field in both reply shapes, and NO worked-answer triples
+PASS hooks registered
+PASS bridge_prove returns verified body
+PASS bridge_prove rejects an unprovable lemma
+PASS normalise applies inside proof bodies
+WILL-EXTRA SELFTEST PASS
+WILL v6 SELFTEST PASS

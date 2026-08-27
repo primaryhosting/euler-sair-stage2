@@ -1,0 +1,7 @@
+# SHIP-2026-08-27-FINAL freeze — assembled 2026-08-27 (supersedes SHIP-2026-08-26)
+# Three entries, each a single solver.py for Solo + Marathon. Upload per DELIVERY-RUNBOOK.md.
+fd5fc599911836ef07e9945f757f1aafac6025ee1aea10c9c53a39be08603020  SHIP-2026-08-27-FINAL.zip
+e0f7ac8406f48c3054bea202cb1fbac1fb4988d6643551d2e9617d62c9b48329  SHIP-2026-08-27-FINAL/solvers/EULER.py           (442061 B)
+90aa400c872cc071d19bb3786568d469ba4d703e5f467fa544756b254a639468  SHIP-2026-08-27-FINAL/solvers/WILL.py            (91230 B)
+b58a004ba4112c0588e5b55eabc5de7a9dac50668fcb898eee91849ca7e33683  SHIP-2026-08-27-FINAL/solvers/EQT02-AUTOLAB.py   (69055 B)
+# SHIP-2026-08-27-FINAL/CHECKSUMS.sha256 covers all 67 packet files (verified clean at freeze).

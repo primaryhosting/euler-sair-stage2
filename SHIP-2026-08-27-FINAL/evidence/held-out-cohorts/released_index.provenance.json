@@ -1,0 +1,52 @@
+{
+ "artifact": "released_index.json",
+ "artifact_sha256": "92059bced914e39637adf79eb9d8225a1435b4eeed12e997e4e39368b6a41d27",
+ "built_utc": "2026-08-26",
+ "source_description": "The four SAIR Stage-2 released evaluation sets as present in this project's development environment (/tmp/evaluation_*.jsonl). Each record carries eq1_id, eq2_id, equation1, equation2, difficulty, answer.",
+ "source_files": [
+  {
+   "file": "evaluation_normal.jsonl",
+   "lines": 200,
+   "bytes": 39967,
+   "sha256": "6adce171b97c247196cd92cab48f59f7751bca18e1d666ede9bf7cb9da538c44"
+  },
+  {
+   "file": "evaluation_hard.jsonl",
+   "lines": 200,
+   "bytes": 39116,
+   "sha256": "5dcef7a57e3a6500247b92bd671d60032f6fe0d397d5388b85f4ebf4d9288213"
+  },
+  {
+   "file": "evaluation_extra_hard.jsonl",
+   "lines": 200,
+   "bytes": 41454,
+   "sha256": "53c0221ef12538ffb4ea9e55d63b6db91c002cbb24fefd8fba31eaacda2bcdf8"
+  },
+  {
+   "file": "evaluation_order5.jsonl",
+   "lines": 200,
+   "bytes": 45522,
+   "sha256": "040016d463efdff41625bffda2c4bfbba0caa093fa5936b42c232ccf1ab104f2"
+  }
+ ],
+ "derivation": "released_pairs = every (eq1_id,eq2_id) across all four files; released_hyps = every eq1_id. See build step in PROVENANCE.md.",
+ "honest_claim": "The held-out cohorts are held out by construction from the OFFICIAL released evaluation sets: our four source files are byte-identical (SHA-256) to the official HuggingFace dataset SAIRfoundation/equational-theories-selected-problems at revision 8050c0c7563c58ab71f9210004133860c87de970 (verified 2026-08-26). The exclusion set (800 pairs / 497 hypotheses) is therefore every released evaluation pair.",
+ "counts": {
+  "released_pairs": 800,
+  "released_hyps": 497
+ },
+ "official_source": {
+  "dataset": "SAIRfoundation/equational-theories-selected-problems (HuggingFace)",
+  "revision_sha": "8050c0c7563c58ab71f9210004133860c87de970",
+  "lastModified": "2026-04-28T01:51:32Z",
+  "files": [
+   "data/evaluation_normal.jsonl",
+   "data/evaluation_hard.jsonl",
+   "data/evaluation_extra_hard.jsonl",
+   "data/evaluation_order5.jsonl"
+  ],
+  "byte_identical": true,
+  "verified_utc": "2026-08-26",
+  "method": "curl each file from HF resolve/main and shasum -a 256 vs our frozen copies \u2014 all 4 IDENTICAL"
+ }
+}

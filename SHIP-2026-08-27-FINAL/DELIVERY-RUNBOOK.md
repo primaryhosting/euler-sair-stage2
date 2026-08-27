@@ -60,12 +60,6 @@ results** — so there is no penalty for submitting entries 1–2 now and adding
   `leanprover/lean4:v4.32.2` — TRUE 553, FALSE 946, **0 emit failures** (up to
   countermodel order 13); sibling runs pinned `bad_certificates = 0` and
   runner-parity on the official toolchain.
-- **AutoLab solver local re-verification (2026-08-27, packet assembly):** the
-  hard acceptance test re-run from scratch against the official
-  `pipeline/runner.py` — ALL CHECKS PASSED, 10/10 accepted, 0 bad certs.
-  Toolchain note: the current official judge checkout pins **Lean v4.33.1**
-  (not the 4.32.2 the spec published — likely SAIR's fix for the 08-20 olean
-  bug); the pinned toolchain must be installed or every judge call times out.
 - **No result carries an OFFICIAL-judge badge until a green run on
   playground.sair.foundation returns.** State every number as held-out /
   computational until then. This is the reactivation standard.

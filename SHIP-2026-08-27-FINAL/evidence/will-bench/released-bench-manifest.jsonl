@@ -1,0 +1,100 @@
+{"id": "evaluation_normal_0151", "equation1": "x * x = (y * (x * z)) * y", "equation2": "x * y = y * (z * x)"}
+{"id": "evaluation_normal_0013", "equation1": "x = (x * y) * (x * (x * z))", "equation2": "x = (x * y) * (z * (z * w))"}
+{"id": "evaluation_normal_0003", "equation1": "x = (y * x) * (x * z)", "equation2": "x = y * ((z * (y * y)) * y)"}
+{"id": "evaluation_normal_0025", "equation1": "x = x", "equation2": "x = y * (((y * x) * y) * y)"}
+{"id": "evaluation_normal_0177", "equation1": "x * (y * x) = (y * x) * z", "equation2": "x * y = y * ((z * w) * u)"}
+{"id": "evaluation_normal_0007", "equation1": "x = ((y * y) * y) * x", "equation2": "x = ((y * (z * y)) * y) * x"}
+{"id": "evaluation_normal_0035", "equation1": "x = x", "equation2": "x = ((y * x) * (x * y)) * x"}
+{"id": "evaluation_normal_0083", "equation1": "x * y = z * (w * (u * v))", "equation2": "x = (y * z) * ((x * x) * z)"}
+{"id": "evaluation_normal_0195", "equation1": "x * x = y * (z * y)", "equation2": "x * y = ((z * y) * w) * w"}
+{"id": "evaluation_normal_0041", "equation1": "x = x", "equation2": "x * y = (y * y) * (x * y)"}
+{"id": "evaluation_normal_0087", "equation1": "x * x = y * ((z * z) * z)", "equation2": "x * x = y * z"}
+{"id": "evaluation_normal_0005", "equation1": "x = (y * x) * (x * z)", "equation2": "x = y * (((z * w) * u) * w)"}
+{"id": "evaluation_normal_0075", "equation1": "x = (y * (z * (w * y))) * x", "equation2": "x = ((y * (z * y)) * w) * x"}
+{"id": "evaluation_normal_0043", "equation1": "x = x", "equation2": "x * x = ((x * y) * x) * y"}
+{"id": "evaluation_normal_0095", "equation1": "x * x = (y * (z * x)) * y", "equation2": "x * y = (z * w) * u"}
+{"id": "evaluation_normal_0077", "equation1": "x * x = y * (z * (x * y))", "equation2": "x * y = z * ((w * u) * w)"}
+{"id": "evaluation_normal_0107", "equation1": "x * (y * z) = (w * y) * u", "equation2": "x = y * (y * ((z * y) * w))"}
+{"id": "evaluation_normal_0113", "equation1": "x = y * (x * y)", "equation2": "x = (((y * z) * x) * w) * z"}
+{"id": "evaluation_normal_0123", "equation1": "x = y * ((y * (x * y)) * y)", "equation2": "x = y * ((y * (z * y)) * w)"}
+{"id": "evaluation_normal_0185", "equation1": "x * (y * z) = (w * u) * w", "equation2": "x * y = (y * z) * (y * z)"}
+{"id": "evaluation_normal_0109", "equation1": "x * (y * z) = (w * u) * v", "equation2": "x = y * (y * ((z * z) * y))"}
+{"id": "evaluation_normal_0081", "equation1": "x * y = z * (y * (x * z))", "equation2": "x * y = z * (w * (u * v))"}
+{"id": "evaluation_normal_0071", "equation1": "x = y * ((z * (x * z)) * y)", "equation2": "x = ((y * x) * z) * (x * z)"}
+{"id": "evaluation_normal_0139", "equation1": "x = y * ((x * (z * y)) * z)", "equation2": "x = (y * y) * ((x * z) * y)"}
+{"id": "evaluation_normal_0001", "equation1": "x = y * (y * x)", "equation2": "x = y * ((x * (z * y)) * z)"}
+{"id": "evaluation_normal_0093", "equation1": "x * x = (y * x) * (z * z)", "equation2": "x * y = (z * x) * (w * u)"}
+{"id": "evaluation_normal_0085", "equation1": "x * x = y * ((y * z) * z)", "equation2": "x * y = (z * (x * x)) * w"}
+{"id": "evaluation_normal_0049", "equation1": "x = x", "equation2": "x * (y * x) = (x * y) * x"}
+{"id": "evaluation_normal_0187", "equation1": "(x * x) * y = (y * x) * z", "equation2": "x * y = ((y * y) * y) * z"}
+{"id": "evaluation_normal_0129", "equation1": "x = (y * x) * (x * (z * y))", "equation2": "x = (y * x) * ((y * x) * z)"}
+{"id": "evaluation_normal_0073", "equation1": "x = (y * y) * (z * (w * x))", "equation2": "x = y * (y * (x * (z * w)))"}
+{"id": "evaluation_normal_0089", "equation1": "x * x = y * ((z * z) * w)", "equation2": "x * y = (z * (z * x)) * z"}
+{"id": "evaluation_normal_0111", "equation1": "x * (y * z) = (w * u) * v", "equation2": "x * y = z * ((w * z) * x)"}
+{"id": "evaluation_normal_0017", "equation1": "x = ((y * z) * y) * (x * z)", "equation2": "x = y * (z * (z * (x * y)))"}
+{"id": "evaluation_normal_0165", "equation1": "x * (y * x) = z * (y * y)", "equation2": "x * y = z * (x * (w * z))"}
+{"id": "evaluation_normal_0051", "equation1": "x = x", "equation2": "(x * x) * x = (x * y) * x"}
+{"id": "evaluation_normal_0115", "equation1": "x = y * (x * (y * (y * y)))", "equation2": "x = (y * z) * (x * (y * z))"}
+{"id": "evaluation_normal_0099", "equation1": "x * x = ((y * z) * y) * w", "equation2": "x * y = (y * y) * (z * w)"}
+{"id": "evaluation_normal_0183", "equation1": "x * (y * z) = (z * z) * y", "equation2": "x * y = (z * (z * w)) * u"}
+{"id": "evaluation_normal_0105", "equation1": "x * (y * z) = (y * w) * u", "equation2": "x * y = ((z * y) * x) * w"}
+{"id": "evaluation_normal_0181", "equation1": "x * (y * y) = (z * z) * w", "equation2": "x * y = (z * (z * y)) * z"}
+{"id": "evaluation_normal_0057", "equation1": "x = x * x", "equation2": "x = x * (y * ((x * y) * z))"}
+{"id": "evaluation_normal_0143", "equation1": "x = (((y * z) * y) * x) * z", "equation2": "x = ((y * (x * y)) * z) * z"}
+{"id": "evaluation_normal_0091", "equation1": "x * y = y * ((z * z) * x)", "equation2": "x * y = z * (z * (x * z))"}
+{"id": "evaluation_normal_0163", "equation1": "x * (x * y) = z * (w * x)", "equation2": "x * y = y * (x * (x * z))"}
+{"id": "evaluation_normal_0021", "equation1": "x = x", "equation2": "x = x * ((y * (y * x)) * x)"}
+{"id": "evaluation_normal_0179", "equation1": "x * (y * x) = (y * y) * z", "equation2": "x * y = ((z * w) * x) * x"}
+{"id": "evaluation_normal_0159", "equation1": "x * x = ((y * z) * w) * w", "equation2": "x * y = (z * (y * w)) * u"}
+{"id": "evaluation_normal_0047", "equation1": "x = x", "equation2": "x * (y * x) = z * (y * z)"}
+{"id": "evaluation_normal_0147", "equation1": "x * x = y * ((y * z) * y)", "equation2": "x * y = z * (x * (w * w))"}
+{"id": "evaluation_normal_0052", "equation1": "x = y * (z * (x * w))", "equation2": "x = y * ((z * x) * (x * w))"}
+{"id": "evaluation_normal_0010", "equation1": "x = x * (y * (x * (y * z)))", "equation2": "x = x * (y * (z * (w * w)))"}
+{"id": "evaluation_normal_0100", "equation1": "x = ((y * y) * y) * (x * z)", "equation2": "x * (y * y) = (z * z) * y"}
+{"id": "evaluation_normal_0086", "equation1": "x = y * ((z * w) * (w * u))", "equation2": "x = y * ((z * w) * (y * u))"}
+{"id": "evaluation_normal_0182", "equation1": "x = (y * ((z * y) * w)) * y", "equation2": "x * y = z * ((x * x) * w)"}
+{"id": "evaluation_normal_0082", "equation1": "x = x * ((y * z) * (y * y))", "equation2": "x * x = (x * y) * (z * x)"}
+{"id": "evaluation_normal_0072", "equation1": "x = (y * y) * (x * z)", "equation2": "x * y = (x * (z * x)) * y"}
+{"id": "evaluation_normal_0062", "equation1": "x = (y * y) * (z * x)", "equation2": "x = (y * z) * ((w * x) * x)"}
+{"id": "evaluation_normal_0012", "equation1": "x = y * (y * (z * (w * x)))", "equation2": "x = y * (z * (w * (u * x)))"}
+{"id": "evaluation_normal_0028", "equation1": "x = (y * x) * ((x * y) * z)", "equation2": "x * x = y * x"}
+{"id": "evaluation_normal_0186", "equation1": "x = ((y * (z * x)) * x) * z", "equation2": "x * y = (x * (y * y)) * x"}
+{"id": "evaluation_normal_0084", "equation1": "x = x * ((y * z) * (w * u))", "equation2": "x = x * (y * (y * (x * z)))"}
+{"id": "evaluation_normal_0178", "equation1": "x = (y * (z * (z * y))) * w", "equation2": "x = (y * ((z * z) * z)) * x"}
+{"id": "evaluation_normal_0076", "equation1": "x = y * (y * (x * (x * z)))", "equation2": "x = y * (z * ((z * x) * x))"}
+{"id": "evaluation_normal_0050", "equation1": "x * y = (y * y) * (z * x)", "equation2": "x * y = ((y * z) * x) * z"}
+{"id": "evaluation_normal_0078", "equation1": "x = y * (z * (x * (y * y)))", "equation2": "x * y = ((z * x) * w) * z"}
+{"id": "evaluation_normal_0162", "equation1": "x = (y * (x * z)) * (x * w)", "equation2": "x = (y * z) * (z * (x * y))"}
+{"id": "evaluation_normal_0118", "equation1": "x = (((y * y) * x) * z) * y", "equation2": "x * x = (y * (y * y)) * x"}
+{"id": "evaluation_normal_0054", "equation1": "x = y * (z * (x * w))", "equation2": "x = y * ((z * w) * (z * y))"}
+{"id": "evaluation_normal_0192", "equation1": "x = y * (z * (w * w))", "equation2": "x * y = (z * w) * (x * y)"}
+{"id": "evaluation_normal_0112", "equation1": "x = (y * ((y * y) * z)) * x", "equation2": "x * y = ((z * y) * x) * y"}
+{"id": "evaluation_normal_0044", "equation1": "x * y = y * (z * (y * x))", "equation2": "x * y = z * (x * (z * w))"}
+{"id": "evaluation_normal_0156", "equation1": "x = (y * z) * (w * (x * z))", "equation2": "x = y * (z * (z * (w * u)))"}
+{"id": "evaluation_normal_0172", "equation1": "x = ((y * z) * w) * (x * y)", "equation2": "x * (y * z) = (w * x) * z"}
+{"id": "evaluation_normal_0198", "equation1": "x = y * (((z * x) * w) * z)", "equation2": "x = ((y * z) * x) * y"}
+{"id": "evaluation_normal_0034", "equation1": "x = (y * ((z * x) * y)) * y", "equation2": "x = y * z"}
+{"id": "evaluation_normal_0098", "equation1": "x = (y * (x * z)) * (z * z)", "equation2": "x * y = x * ((x * y) * x)"}
+{"id": "evaluation_normal_0110", "equation1": "x = (y * ((x * z) * x)) * y", "equation2": "x * x = ((x * y) * x) * y"}
+{"id": "evaluation_normal_0094", "equation1": "x = (y * x) * ((z * x) * z)", "equation2": "x = (y * x) * (y * (x * x))"}
+{"id": "evaluation_normal_0148", "equation1": "x = y * ((x * (z * x)) * z)", "equation2": "x = ((y * z) * (x * x)) * z"}
+{"id": "evaluation_normal_0166", "equation1": "x = (y * (z * z)) * (x * z)", "equation2": "x * (y * z) = (y * x) * y"}
+{"id": "evaluation_normal_0104", "equation1": "x = (x * (x * (y * x))) * z", "equation2": "x * x = ((x * x) * y) * y"}
+{"id": "evaluation_normal_0160", "equation1": "x = (x * (y * z)) * (w * u)", "equation2": "x = (x * (x * (y * z))) * y"}
+{"id": "evaluation_normal_0190", "equation1": "x * y = z * (x * (x * z))", "equation2": "x * (y * z) = (z * x) * x"}
+{"id": "evaluation_normal_0064", "equation1": "x = (x * (y * x)) * x", "equation2": "x = (x * ((y * z) * x)) * x"}
+{"id": "evaluation_normal_0154", "equation1": "x = y * (((z * y) * x) * y)", "equation2": "x * y = z * ((y * x) * x)"}
+{"id": "evaluation_normal_0140", "equation1": "x = y * (x * ((x * z) * y))", "equation2": "x * y = (y * z) * (z * x)"}
+{"id": "evaluation_normal_0108", "equation1": "x = (y * ((x * y) * z)) * y", "equation2": "x = (y * y) * ((x * y) * z)"}
+{"id": "evaluation_normal_0138", "equation1": "x = y * (x * ((x * y) * z))", "equation2": "x = (y * ((z * x) * z)) * y"}
+{"id": "evaluation_normal_0124", "equation1": "x = (y * (x * z)) * y", "equation2": "x = y * (x * y)"}
+{"id": "evaluation_normal_0030", "equation1": "x = ((x * y) * y) * (y * y)", "equation2": "x = ((x * (y * y)) * y) * y"}
+{"id": "evaluation_normal_0024", "equation1": "x = (x * y) * (z * (x * y))", "equation2": "x * y = ((x * y) * z) * w"}
+{"id": "evaluation_normal_0066", "equation1": "x = (y * (x * x)) * x", "equation2": "x = ((y * x) * (x * x)) * x"}
+{"id": "evaluation_normal_0018", "equation1": "x = x * ((y * (z * z)) * z)", "equation2": "x = x * x"}
+{"id": "evaluation_normal_0056", "equation1": "x = y * ((z * y) * w)", "equation2": "x = y * (((z * w) * y) * u)"}
+{"id": "evaluation_normal_0004", "equation1": "x = y * ((z * x) * x)", "equation2": "x = y * (((z * w) * x) * x)"}
+{"id": "evaluation_normal_0130", "equation1": "x = x * ((y * y) * (x * z))", "equation2": "x * y = (x * y) * (y * y)"}
+{"id": "evaluation_normal_0168", "equation1": "x = (y * (z * w)) * (z * y)", "equation2": "x = (y * y) * ((z * y) * y)"}
+{"id": "evaluation_normal_0184", "equation1": "x = (y * ((z * z) * w)) * z", "equation2": "x * y = ((y * y) * z) * w"}
+{"id": "evaluation_normal_0038", "equation1": "x = ((y * (y * x)) * x) * x", "equation2": "x = (x * x) * x"}

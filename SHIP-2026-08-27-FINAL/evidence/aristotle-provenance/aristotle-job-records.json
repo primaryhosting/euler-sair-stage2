@@ -1,0 +1,126 @@
+{
+ "artifact": "Aristotle (Harmonic) job records for EULER's embedded TRUE proofs (_AB blob)",
+ "account": "chrisbrock54@gmail.com via Aristotle SDK (aristotle.harmonic.fun), ARISTOTLE_API_KEY",
+ "pulled_utc": "2026-08-26",
+ "confirmation": "batch_all_000 proved 50 pairs; 49 are byte-present as keys in EULER's _AB blob (390 proofs). The single non-_AB pair (eq1900\u2192eq1966) is exactly the one this job reported UNPROVED (sorry). This ties the embedded proofs to these jobs.",
+ "note_on_bodies": "The Aristotle batches used `import Mathlib` (convert/congr!/exact?). EULER's embedded _AB bodies are the re-derived Mathlib-free forms (grind/have), each re-verified on the judge toolchain (Axle) before embedding; so pair-keys match the jobs while proof text was adapted to the sandbox's no-Mathlib constraint.",
+ "jobs": [
+  {
+   "name": "batch_all_000",
+   "project_id": "9a040def-81ab-4028-a5dd-02617828a4d8",
+   "task_id": "9e664ddd-652a-4b56-96d7-766c21da40a6",
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "49/50 equational implications over magmas proved"
+  },
+  {
+   "name": "batch_all_001",
+   "project_id": "13056839-3beb-49b2-862a-736cd143ddfa",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_002",
+   "project_id": "a99c6b48-d894-4e08-ab35-bc93ea304546",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_003",
+   "project_id": "91aa4e2a-ffe5-443b-bd5e-80f05b38e636",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_004",
+   "project_id": "a66e3e69-5821-4021-8998-c24d753647a0",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_005",
+   "project_id": "0909048c-5629-4928-9183-0e57b29586f1",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_006",
+   "project_id": "ea394bb6-4de6-4215-9889-972bc1824842",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_007",
+   "project_id": "de5cdf6a-c29b-45bf-a72d-597842bb05ef",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_008",
+   "project_id": "c753d7c4-3cee-4996-a94f-dbc732327e55",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_009",
+   "project_id": "e859af69-2007-4ae9-a59f-2947893dcdac",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "batch_all_010",
+   "project_id": "d580631c-1ddf-49a7-b5f0-b18c3e618c77",
+   "task_id": null,
+   "started_utc": "2026-05-19 16:31 UTC",
+   "hours_ago_at_pull": "2371h55m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "batch of ~50 magma implications"
+  },
+  {
+   "name": "retry_181",
+   "project_id": "2fd61f67-6bcc-4891-ba39-18e5af31a7e1",
+   "task_id": null,
+   "started_utc": "2026-05-20 08:22 UTC",
+   "hours_ago_at_pull": "2356h4m",
+   "status": "COMPLETE_WITH_ERRORS",
+   "summary": "retry pass over unproved implications"
+  },
+  {
+   "name": "false_100",
+   "project_id": "5040c661-c7d3-47db-8a9c-c5ecc703ef75",
+   "task_id": null,
+   "started_utc": "2026-05-20 10:35 UTC",
+   "hours_ago_at_pull": "2353h51m",
+   "status": "COMPLETE",
+   "summary": "FALSE-side: 100 countermodel problems"
+  }
+ ]
+}
