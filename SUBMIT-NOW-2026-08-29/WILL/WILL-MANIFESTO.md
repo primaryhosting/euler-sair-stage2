@@ -18,4 +18,4 @@ There is a scene everyone knows: the kid without the credentials, working the ja
 
 ---
 
-*Riemann Labs — https://riemannlab.com · Paper: https://riemannlab.com/mechanical-reproduction · EULER vs WILL vs the World: https://riemannlab.com/euler-vs-will · Christopher Brock.*
+*Riemann Labs — https://torus.riemannlab.com · Paper: https://torus.riemannlab.com/viewpoint/mechanical-reproduction · EULER vs WILL vs the World: https://torus.riemannlab.com/euler-vs-will · Christopher Brock.*

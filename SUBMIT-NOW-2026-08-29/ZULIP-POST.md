@@ -18,8 +18,8 @@ Two things I want to be honest about, in the spirit of the tie-break discussion 
 
 Full write-up, verified certificates, and the essay this all sits inside — *Mathematics in the Age of Mechanical Reproduction* — are here:
 
-- **EULER vs WILL vs the World** — https://riemannlab.com/euler-vs-will
-- **Paper (PDF)** — https://riemannlab.com/mechanical-reproduction
+- **EULER vs WILL vs the World** — https://torus.riemannlab.com/euler-vs-will
+- **Paper (PDF)** — https://torus.riemannlab.com/viewpoint/mechanical-reproduction
 
 Genuine thanks to @YZ and the organizers for the stress sets and the fast judge; to @Axabra and @Wenlin Zhang for setting a bar worth chasing; and to everyone on the Contributor Network we read and learned from. Good luck on the final leaderboards. 🙏
 

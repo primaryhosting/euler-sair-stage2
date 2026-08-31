@@ -25,9 +25,9 @@ EQT02-ULTIMATE is unchanged. All three are Python-stdlib-only (no third-party
 packages — the sandbox is `python:3.11-slim`), ≤ 500 KB, one top-level `PROMPT`,
 and support both Solo and Marathon through `JUDGE_MARATHON_MANIFEST` branching.
 
-Links: Riemann Labs — https://riemannlab.com · Paper —
-https://riemannlab.com/mechanical-reproduction · EULER vs WILL vs the World —
-https://riemannlab.com/euler-vs-will
+Links: Riemann Labs — https://torus.riemannlab.com · Paper —
+https://torus.riemannlab.com/viewpoint/mechanical-reproduction · EULER vs WILL vs the World —
+https://torus.riemannlab.com/euler-vs-will
 
 ## Placement decision
 

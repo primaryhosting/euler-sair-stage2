@@ -1,7 +1,7 @@
 # EULER — breadth-first, certificate-emitting solver
 
 ## What it does
-EULER decides magma-law implications Eq1 ⇒ Eq2: a Lean 4 proof for TRUE, a finite or infinite countermodel for FALSE. Public knowledge narrows the direction; independent search methods then compete to produce a certificate the Lean judge accepts. Full write-up, verified certificates, and the essay this sits inside: https://riemannlab.com/euler-vs-will
+EULER decides magma-law implications Eq1 ⇒ Eq2: a Lean 4 proof for TRUE, a finite or infinite countermodel for FALSE. Public knowledge narrows the direction; independent search methods then compete to produce a certificate the Lean judge accepts. Full write-up, verified certificates, and the essay this sits inside: https://torus.riemannlab.com/euler-vs-will
 
 ## How it works
 Equations are normalized; supplied IDs are bound to the supplied text before any ID-keyed fact is trusted. The public ETP implication closure supplies DIRECTION ONLY, never a proof.
@@ -23,4 +23,4 @@ Mace4, Aristotle/Harmonic, AXLE/Axiom, Twee, E-prover, and Vampire contributed a
 On the public `order5_normal` stress category — entirely out of the matrix — the given-clause engine lifts the DETERMINISTIC result (no LLM, no bank) from 29/50 to 50/50, 0 wrong; sampled true certificates verified 9/9 on Lean 4.33.0 via AXLE, false witnesses re-checked exhaustively in Python. Held-out development cohorts: 120/120 and 100/100 FALSE on unseen hypotheses. None of this guarantees the private evaluation, which no one can see.
 
 ## Links & thanks
-Riemann Labs — https://riemannlab.com · Paper, *Mathematics in the Age of Mechanical Reproduction* (a response to Tao's *Mathematics in the Age of AI*) — https://riemannlab.com/mechanical-reproduction · full acknowledgments — https://riemannlab.com/euler-vs-will. Thanks to the Equational Theories Project (Terence Tao et al.), the SAIR judge, Stephan Schulz's E-prover (given-clause loop), Harmonic, Axiom, Mace4, Twee, Vampire, and Lean/Mathlib (Leonardo de Moura, the Lean FRO). Contributor Network: S00019, S00023, M00010, Emily, suii0x; the given-clause turn was prompted by Axabra and Wenlin Zhang's deterministic sweeps. — Christopher Brock, Riemann Labs
+Riemann Labs — https://torus.riemannlab.com · Paper, *Mathematics in the Age of Mechanical Reproduction* (a response to Tao's *Mathematics in the Age of AI*) — https://torus.riemannlab.com/viewpoint/mechanical-reproduction · full acknowledgments — https://torus.riemannlab.com/euler-vs-will. Thanks to the Equational Theories Project (Terence Tao et al.), the SAIR judge, Stephan Schulz's E-prover (given-clause loop), Harmonic, Axiom, Mace4, Twee, Vampire, and Lean/Mathlib (Leonardo de Moura, the Lean FRO). Contributor Network: S00019, S00023, M00010, Emily, suii0x; the given-clause turn was prompted by Axabra and Wenlin Zhang's deterministic sweeps. — Christopher Brock, Riemann Labs

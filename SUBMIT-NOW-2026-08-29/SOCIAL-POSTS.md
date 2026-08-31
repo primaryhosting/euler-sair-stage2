@@ -2,8 +2,8 @@
 *Riemann Labs · SAIR Stage 2 · Christopher Brock. Three ready-to-post drafts. The hero is the paper, not the leaderboard; the outcome is honestly uncertain; the community — human and AI — made it possible.*
 
 Links used across all three:
-- Story: https://riemannlab.com/euler-vs-will
-- Paper: https://riemannlab.com/viewpoint/mechanical-reproduction
+- Story: https://torus.riemannlab.com/euler-vs-will
+- Paper: https://torus.riemannlab.com/viewpoint/mechanical-reproduction
 
 ---
 
@@ -24,8 +24,8 @@ What made the work possible was a community — human *and* AI. Contributors who
 That's the whole thesis at Riemann Labs: **AI × mathematics, done honestly.** Trace, not aura.
 
 The paper, the machine-checked certificates, and the full story:
-→ riemannlab.com/euler-vs-will
-→ riemannlab.com/viewpoint/mechanical-reproduction
+→ torus.riemannlab.com/euler-vs-will
+→ torus.riemannlab.com/viewpoint/mechanical-reproduction
 
 #AI #Mathematics #FormalVerification #Lean4 #ResearchIntegrity #Riemann
 
@@ -46,7 +46,7 @@ And the quiet miracle underneath it all: none of this was done alone. A whole co
 That's what Riemann Labs is about: AI and mathematics, done honestly. ❤️
 
 Read the story (and the paper) 👇
-riemannlab.com/euler-vs-will
+torus.riemannlab.com/euler-vs-will
 
 ---
 
@@ -60,7 +60,7 @@ The turn came from here. Reading @Axabra's and @Wenlin Zhang's clean determinist
 
 Because the point isn't the leaderboard — it's the essay the competition is a case study for: **Mathematics in the Age of Mechanical Reproduction**, a response to Tao's *Mathematics in the Age of AI*, on statement fidelity, reactivation, and the limits of the verified proof.
 
-Write-up + certificates + paper: https://riemannlab.com/euler-vs-will · https://riemannlab.com/viewpoint/mechanical-reproduction
+Write-up + certificates + paper: https://torus.riemannlab.com/euler-vs-will · https://torus.riemannlab.com/viewpoint/mechanical-reproduction
 
 Thanks to @YZ and the organizers, to @Axabra and @Wenlin Zhang for setting a bar worth chasing, and to everyone on the Contributor Network we read and learned from. Good luck on the final leaderboards. 🙏
 
