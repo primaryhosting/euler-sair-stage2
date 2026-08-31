@@ -5,22 +5,18 @@
 
 ---
 
-Final submissions in from Riemann Labs — and a thank-you, because the last few days on this thread changed how our solver works.
+Final submissions are in from Riemann Labs — but the thing I most want to put in front of this community isn't a solver. It's an **addition to Terence Tao's *Mathematics in the Age of AI***.
 
-**The turn.** Reading @Axabra's and @Wenlin Zhang's clean deterministic sweeps — 200/200 with *zero LLM*, guided superposition, and the two stubborn order-5 residuals cracked "by improving the proof-search architecture rather than adding brute force" — sent us back to our own true-side engine. Ours was a bounded mini-Twee doing blind critical-pair saturation: on the order-5 projection/collapse laws it would spin out to 4,000+ facts and find nothing. The fix wasn't a bigger data bank; it was the one architectural idea your posts pointed at — **E-prover's given-clause loop**, reimplemented in pure Python: process the lightest derived equation first, with an age-weight ratio so no useful lemma starves.
+Tao's criterion is now well known: a proof no human can properly explain should be viewed as incomplete, even where formal verification has succeeded — the split of formal correctness from human reactivability. **What I want to add sits one arrow earlier, and the pipeline never guards it.** Verification adjudicates *formal statement → proof*. Nothing adjudicates *the problem you meant → the formal statement*. A subtly weakened formalization is cheaper to prove and still passes every downstream check — a kernel will certify the wrong theorem, flawlessly. I call this the **statement-fidelity** layer, and my paper — ***Mathematics in the Age of Mechanical Reproduction*** — proposes a protocol for it.
 
-Reordered that way, the same search reaches the projection lemma in **~40 facts** instead of drowning in thousands. On the public `stage2_stress_test` `order5_normal` category, our **deterministic** result (no LLM, no cert bank) went from **29/50 → 50/50, 0 wrong**, closing the two residuals (E19040→E17478 total collapse; E6543→E29450 left-projection) and every other undecided true case at runtime. Sampled true certificates checked 9/9 on Lean 4.33; false witnesses re-checked exhaustively in Python.
+Statement fidelity is one of six relations machine-proof abundance pulls apart that mathematics has always treated as traveling together: formal correctness, statement fidelity, human reactivability, access, standing, significance. Tao names the first split; the paper works the rest, read through a 1936 constellation — Husserl on how a technique outlives the insight it records, Benjamin on trace against aura, Turing specifying the machine — and it ends with two concrete mechanisms: the statement-fidelity protocol and a reactivation packet. That is the contribution I'd genuinely value this community's eyes on.
 
-Two things I want to be honest about, in the spirit of the tie-break discussion here:
+The competition is the case study, not the headline. In that spirit, honestly: I can't tell you how we'll place and I won't guess — the private set is unseen by everyone, so I claim a method, not a score. We entered a **pair on purpose** — EULER (flagship, disclosed oracle + certificate banks) and **WILL**, the same task with the banks *removed* — the ablation the essay needs. (And a footnote, because it happened here: @Axabra's and @Wenlin Zhang's deterministic sweeps sent me back to our engine; E-prover's given-clause loop, reimplemented in pure Python, took our deterministic `order5_normal` result 29/50 → 50/50, 0 wrong, sampled certificates checked on Lean 4.33. The paper, not that number, is the point.)
 
-1. This is the **public** stress set. The private evaluation is what matters, and none of us can see it — so I'm claiming a *method that generalizes*, not a score.
-2. We submitted a **pair on purpose**: EULER (the flagship, which still carries a disclosed ETP-direction oracle + dev-time certificate banks for released rows) and **WILL** — the same task with the oracle, the banks, and every borrowed proof *removed*. WILL is the ablation the paper needs: strip away the sediment and whatever still proves is technique. The given-clause loop is pure technique, so it went into WILL too — it now proves the projection laws with no table at all.
+Read it:
+- Paper — https://torus.riemannlab.com/viewpoint/mechanical-reproduction
+- EULER vs WILL vs the World (the machine-checked write-up) — https://torus.riemannlab.com/euler-vs-will
 
-Full write-up, verified certificates, and the essay this all sits inside — *Mathematics in the Age of Mechanical Reproduction* — are here:
-
-- **EULER vs WILL vs the World** — https://torus.riemannlab.com/euler-vs-will
-- **Paper (PDF)** — https://torus.riemannlab.com/viewpoint/mechanical-reproduction
-
-Genuine thanks to @YZ and the organizers for the stress sets and the fast judge; to @Axabra and @Wenlin Zhang for setting a bar worth chasing; and to everyone on the Contributor Network we read and learned from. Good luck on the final leaderboards. 🙏
+Genuine thanks to @YZ and the organizers, to @Axabra and @Wenlin Zhang for setting a bar worth chasing, and to everyone on the Contributor Network we read and learned from. This community — human and machine — is the thing the paper is really about. Good luck on the final leaderboards. 🙏
 
 — Christopher Brock, Riemann Labs

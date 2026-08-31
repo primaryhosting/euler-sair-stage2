@@ -1,67 +1,57 @@
-# Social posts — the real story
-*Riemann Labs · SAIR Stage 2 · Christopher Brock. Three ready-to-post drafts. The hero is the paper, not the leaderboard; the outcome is honestly uncertain; the community — human and AI — made it possible.*
+# Social posts — the addition to Tao
+*Riemann Labs · Christopher Brock. Three drafts. The lead is the intellectual contribution — the unguarded problem→statement arrow (statement fidelity), an addition to Tao's* Mathematics in the Age of AI. *The SAIR competition is the case study, secondary. Honest on the uncertain outcome; the community — human and AI — made it possible.*
 
 Links used across all three:
-- Story: https://torus.riemannlab.com/euler-vs-will
 - Paper: https://torus.riemannlab.com/viewpoint/mechanical-reproduction
+- Case study / write-up: https://torus.riemannlab.com/euler-vs-will
 
 ---
 
 ## 1 · LinkedIn
 
-**The real story isn't who wins. It's what machine-checkable mathematics is doing to the craft.**
+**Machine verification can certify the wrong theorem — flawlessly. Closing that gap is what my new paper adds to Terence Tao's *Mathematics in the Age of AI*.**
 
-Over the past weeks I entered SAIR's Mathematics Distillation Challenge — a competition where your submission is a *program* that must produce Lean 4 proofs a machine kernel accepts or rejects. No partial credit. No human referee.
+An AI allowed to quietly let *a, b, c* be zero can produce a *formally certified* proof that Fermat's Last Theorem is **false**. The kernel accepts it. Every downstream review passes. Nothing is wrong with the proof — the machine simply proved a subtly different statement than the one we meant to ask.
 
-I submitted two solvers, EULER and WILL. Whether they'll place, I honestly can't tell you: the evaluation set is private and unseen by everyone, and I won't claim a result I can't show you.
+Tao maps a pipeline in which every arrow is guarded: verification for correctness, exposition for legibility, refereeing for acceptance. **My paper — *Mathematics in the Age of Mechanical Reproduction* — is an addition to his: the *first* arrow is guarded by nothing.** Formal verification adjudicates *statement → proof*; it is silent on *problem → statement*. It's the most Goodhart-exposed point in mathematics — a subtly weakened statement is cheaper to prove and passes every check. I name that the **statement-fidelity** layer and give it a stage and a protocol.
 
-Because the leaderboard was never the point. The competition is the case study for a paper — **Mathematics in the Age of Mechanical Reproduction**, written as a response to Terence Tao's *Mathematics in the Age of AI*.
+It's one of six things machine-proof abundance pulls apart that our field has always treated as one: correctness, statement fidelity, human reactivability, access, standing, significance. I read the split through a 1936 constellation — Husserl on how a technique outlives the insight it records, Benjamin on trace against aura, Turing specifying the machine.
 
-When a machine can produce and verify a proof faster than any human can reconstruct the insight behind it, six things mathematics has always treated as one begin to come apart: formal correctness, fidelity to the problem you *meant* to ask, whether a human can reactivate the idea, access, standing, and significance. Tao names the first split; the paper works the rest — through a 1936 constellation: Husserl on how a technique outlives the insight it records, Benjamin on trace against aura, Turing specifying the machine.
+I tested the argument against a real case: SAIR's Mathematics Distillation Challenge, judged by a deterministic Lean kernel with no human referee. Whether my two solvers place, I honestly can't say — the evaluation set is private and unseen by everyone, and I claim no result I can't show. The competition is the case study; the paper is the point. And none of it was done alone — a whole community, human and AI, made it possible.
 
-What made the work possible was a community — human *and* AI. Contributors whose solvers I read and learned from; the provers (E, Vampire, Twee), Aristotle and AXLE; Lean and Mathlib; the Equational Theories Project (Terence Tao and collaborators); the SAIR organizers. And an AI collaborator, working alongside me, in the open.
-
-That's the whole thesis at Riemann Labs: **AI × mathematics, done honestly.** Trace, not aura.
-
-The paper, the machine-checked certificates, and the full story:
-→ torus.riemannlab.com/euler-vs-will
 → torus.riemannlab.com/viewpoint/mechanical-reproduction
+→ torus.riemannlab.com/euler-vs-will
 
-#AI #Mathematics #FormalVerification #Lean4 #ResearchIntegrity #Riemann
+#AI #Mathematics #FormalVerification #Lean4 #ResearchIntegrity
 
 ---
 
 ## 2 · Facebook
 
-For the last few weeks I've been up late doing something strange and wonderful: teaching a computer to prove theorems that *another* computer then checks, line by line, with no human allowed to referee.
+Here's something that should give anyone excited about AI and math a pause:
 
-It was a competition — SAIR's math challenge — and I entered two solvers I named **EULER** and **WILL**. Did we win? I genuinely don't know, and I won't pretend to: the test problems are secret, hidden from everyone. I'd rather tell you the truth than a headline.
+An AI, allowed to quietly assume the numbers can be zero, can produce a *formally certified* proof that Fermat's Last Theorem is false. The computer checks it. It passes every review. Nothing is "wrong" with the proof — the machine just proved a subtly different statement than the one we meant to ask.
 
-Because winning was never the real story.
+That gap is what my new paper is about — **Mathematics in the Age of Mechanical Reproduction**, written as an addition to Terence Tao's *Mathematics in the Age of AI*. Tao describes a pipeline where every step is checked. I point at the one step nobody checks: the translation from the real problem into the formal statement the machine actually proves. When proofs become cheap to produce, that unguarded step is exactly where things quietly go wrong — and it's only one of several things we're about to lose track of.
 
-The real story is a paper I wrote — **Mathematics in the Age of Mechanical Reproduction** — about what happens to mathematics itself when machines can produce and check proofs faster than any person can understand them. What do we lose, and what must we protect, when the proof is flawless but no human can explain it?
+I put the idea to the test in a real competition — SAIR's math challenge, judged entirely by machine. Did we win? I honestly don't know: the test set is secret, hidden from everyone, and I won't pretend to a result I can't show. The competition was the case study. The paper is the point. And none of it happened alone: a whole community — people, and an AI working right alongside me — made it possible.
 
-And the quiet miracle underneath it all: none of this was done alone. A whole community — mathematicians, other builders, open-source provers, and yes, an AI working right alongside me — made it possible. A human and an AI, doing real mathematics together, out in the open.
-
-That's what Riemann Labs is about: AI and mathematics, done honestly. ❤️
-
-Read the story (and the paper) 👇
-torus.riemannlab.com/euler-vs-will
+Read it 👇
+torus.riemannlab.com/viewpoint/mechanical-reproduction
 
 ---
 
 ## 3 · Zulip (SAIR stream → *Stage 2 is Live!*)
 
-Final submissions in from Riemann Labs — and mostly a thank-you, because this thread changed the work.
+Final submissions are in from Riemann Labs — but the thing I most want in front of this community isn't a solver. It's an **addition to Terence Tao's *Mathematics in the Age of AI***.
 
-First, honestly: I can't tell you how we'll place, and I won't guess. The evaluation set is private and unseen by all of us; I'm claiming a *method*, not a score. What I can show is machine-checked.
+Tao's pipeline guards every arrow — verification, exposition, refereeing, canonicalization. **The first arrow is unguarded.** Verification adjudicates *formal statement → proof*; nothing adjudicates *the problem you meant → the formal statement*. It's the most Goodhart-exposed point in the structure: a subtly weakened statement is cheaper to prove and passes every downstream check. (Tao and Klowden's own example: an AI permitted to let *a, b, c* be zero can formally certify that Fermat's Last Theorem is false.) My paper — ***Mathematics in the Age of Mechanical Reproduction*** — names that the statement-fidelity layer, sets it beside five other relations machine-proof abundance pulls apart (correctness, fidelity, reactivability, access, standing, significance), reads them through a 1936 constellation (Husserl, Benjamin, Turing), and proposes a statement-fidelity protocol and a reactivation packet. That's the contribution I'd value your eyes on.
 
-The turn came from here. Reading @Axabra's and @Wenlin Zhang's clean deterministic 200/200 sweeps — guided superposition, zero LLM, the stubborn order-5 residuals cracked by *architecture* rather than brute force — I went back to our true-side engine (a bounded mini-Twee that drowned in thousands of critical pairs on those laws) and swapped in the one idea your posts pointed at: **E-prover's given-clause loop** with an age-weight ratio, reimplemented in pure Python. Same search, lightest-first: it reaches the projection lemma in ~40 facts instead of 4,000. On public `order5_normal`, our deterministic result went 29/50 → 50/50, 0 wrong; sampled true certificates checked 9/9 on Lean 4.33; false witnesses re-checked in Python. We submitted a pair on purpose — EULER (flagship, disclosed oracle + banks) and WILL (the same task with the banks *removed*): the ablation the paper needs.
+The competition is the case study, not the headline. Honestly: I can't tell you how we'll place and won't guess — the private set is unseen by everyone; I claim a method, not a score. We entered a **pair on purpose** — EULER (flagship, disclosed oracle + banks) and **WILL**, the same task with the banks removed — the ablation the essay needs. (Footnote, because it happened here: @Axabra's and @Wenlin Zhang's deterministic sweeps sent me back to our engine; E-prover's given-clause loop reimplemented in pure Python took our deterministic `order5_normal` result 29/50 → 50/50, 0 wrong, certificates checked on Lean 4.33. The paper, not that number, is the point.)
 
-Because the point isn't the leaderboard — it's the essay the competition is a case study for: **Mathematics in the Age of Mechanical Reproduction**, a response to Tao's *Mathematics in the Age of AI*, on statement fidelity, reactivation, and the limits of the verified proof.
+- Paper — https://torus.riemannlab.com/viewpoint/mechanical-reproduction
+- EULER vs WILL vs the World — https://torus.riemannlab.com/euler-vs-will
 
-Write-up + certificates + paper: https://torus.riemannlab.com/euler-vs-will · https://torus.riemannlab.com/viewpoint/mechanical-reproduction
-
-Thanks to @YZ and the organizers, to @Axabra and @Wenlin Zhang for setting a bar worth chasing, and to everyone on the Contributor Network we read and learned from. Good luck on the final leaderboards. 🙏
+Genuine thanks to @YZ and the organizers, to @Axabra and @Wenlin Zhang for setting a bar worth chasing, and to everyone on the Contributor Network we read and learned from. This community — human and machine — is the thing the paper is really about. Good luck on the final leaderboards. 🙏
 
 — Christopher Brock, Riemann Labs
