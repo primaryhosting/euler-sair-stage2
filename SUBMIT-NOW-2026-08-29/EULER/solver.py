@@ -4534,6 +4534,29 @@ def _offline_true_body(eq1, eq2, eq1_id, eq2_id, deadline):
     static = hardcoded_proof(eq1_id, eq2_id)
     if static:
         return static
+    # v9 (matrix-transitivity lever): run a SHORT-budget pass of the SOUND
+    # matching-chain prover FIRST. It is a bounded rewrite-chain search through
+    # the hypothesis h — the atomic single-edge primitive underneath transitivity
+    # composition — and it closes the variable-collapsing eq1_id=336 family
+    # (a◇b = f(b)) and order4_normal_0012 directly and near-instantly (0.00s). In
+    # the baseline this prover sat AFTER three ~16s _mt_prove completion rounds,
+    # so on a bounded marathon per-problem slice the deadline was exhausted
+    # (return None) before this cheap winner ran. It is _ce_recheck-gated, so it
+    # can only emit a verified body — no wrong-answer risk.
+    #
+    # CAP is deliberately SMALL here (1.5s): the 26 target rows resolve in 0.00s,
+    # while on the order4_hard tail this prover can burn its full cap without
+    # closing the goal. A large early cap there would starve the shared marathon
+    # budget and drop rows the completion tiers otherwise solve. The original
+    # full-budget ce_chain pass is retained below (after the completion rounds),
+    # so the slow-chain order4_hard rows it used to close are still closed.
+    remain = max(0.0, deadline - time.time())
+    if remain > 0:
+        cproof = _ce_chain_proof(eq1, eq2, time_cap=min(1.5, remain))
+        if cproof:
+            return cproof
+    if time.time() >= deadline:
+        return None
     qproof = _mt_prove(eq1, eq2, rounds=2)
     if qproof:
         return qproof
@@ -4553,12 +4576,17 @@ def _offline_true_body(eq1, eq2, eq1_id, eq2_id, deadline):
         return mproof
     if time.time() >= deadline:
         return None
+    # Full-budget matching-chain pass (unchanged from baseline): the slow-chain
+    # order4_hard rows that need >1.5s of _ce_prove search are closed here.
     remain = max(0.0, deadline - time.time())
     cproof = _ce_chain_proof(eq1, eq2, time_cap=min(8.0, remain))
     if cproof:
         return cproof
     if time.time() >= deadline:
         return None
+    # Matrix-guided 2-/3-hop transitivity composition (Section 4b). Closes the
+    # in-matrix TRUE pairs the direct provers miss (e.g. order4_normal_0050,
+    # 4160->3261) by splitting through a provable intermediate equation.
     t_dead = min(deadline, time.time() + 60.0)
     return _transitivity_prove(eq1, eq2, eq1_id, eq2_id,
                                deadline=t_dead, budget_k=40)
